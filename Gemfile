@@ -38,5 +38,5 @@ group :production do
   gem 'newrelic_rpm'
   gem 'lograge'
   gem 'sentry-raven'
-  gem 'sidekiq'
+  gem 'rails_autoscale_agent'
 end

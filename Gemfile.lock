@@ -463,6 +463,8 @@ GEM
     rails-i18n (5.0.4)
       i18n (~> 0.7)
       railties (~> 5.0)
+    rails_autoscale_agent (0.3.1)
+      activesupport (>= 3.2)
     railties (5.1.4)
       actionpack (= 5.1.4)
       activesupport (= 5.1.4)
@@ -636,6 +638,7 @@ DEPENDENCIES
   newrelic_rpm
   passenger
   puma (~> 3.0)
+  rails_autoscale_agent
   sendgrid-ruby
   sentry-raven
   sidekiq
