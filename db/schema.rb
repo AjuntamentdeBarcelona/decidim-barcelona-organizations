@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20171117141705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_stat_statements"
 
   create_table "decidim_accountability_results", id: :serial, force: :cascade do |t|
     t.jsonb "title"
@@ -22,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171117141705) do
     t.date "start_date"
     t.date "end_date"
     t.decimal "progress", precision: 5, scale: 2
+    t.string "external_id"
     t.integer "parent_id"
     t.integer "decidim_accountability_status_id"
     t.integer "decidim_feature_id"
@@ -29,9 +31,12 @@ ActiveRecord::Schema.define(version: 20171117141705) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "children_count", default: 0
+    t.integer "legacy_id"
     t.index ["decidim_accountability_status_id"], name: "decidim_accountability_results_on_status_id"
+    t.index ["decidim_feature_id", "external_id"], name: "decidim_accountability_results_on_external_id", unique: true
     t.index ["decidim_feature_id"], name: "index_decidim_accountability_results_on_decidim_feature_id"
     t.index ["decidim_scope_id"], name: "index_decidim_accountability_results_on_decidim_scope_id"
+    t.index ["external_id"], name: "index_decidim_accountability_results_on_external_id"
     t.index ["parent_id"], name: "decidim_accountability_results_on_parent_id"
   end
 
@@ -53,7 +58,6 @@ ActiveRecord::Schema.define(version: 20171117141705) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["decidim_accountability_result_id"], name: "index_decidim_accountability_timeline_entries_on_results_id"
-    t.index ["entry_date"], name: "index_decidim_accountability_timeline_entries_on_entry_date"
   end
 
   create_table "decidim_assemblies", id: :serial, force: :cascade do |t|
@@ -151,7 +155,7 @@ ActiveRecord::Schema.define(version: 20171117141705) do
 
   create_table "decidim_categorizations", force: :cascade do |t|
     t.bigint "decidim_category_id", null: false
-    t.string "categorizable_type", null: false
+    t.string "categorizable_type"
     t.bigint "categorizable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -188,14 +192,30 @@ ActiveRecord::Schema.define(version: 20171117141705) do
     t.index ["decidim_root_commentable_type", "decidim_root_commentable_id"], name: "decidim_comments_comment_root_commentable"
   end
 
+  create_table "decidim_debates_debates", id: :serial, force: :cascade do |t|
+    t.jsonb "title"
+    t.jsonb "description"
+    t.jsonb "instructions"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "image"
+    t.integer "decidim_feature_id"
+    t.integer "decidim_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.jsonb "extra"
+    t.index ["decidim_category_id"], name: "index_decidim_debates_debates_on_decidim_category_id"
+    t.index ["decidim_feature_id"], name: "index_decidim_debates_debates_on_decidim_feature_id"
+  end
+
   create_table "decidim_features", id: :serial, force: :cascade do |t|
     t.string "manifest_name"
     t.jsonb "name"
     t.integer "participatory_space_id", null: false
     t.jsonb "settings", default: {}
     t.integer "weight", default: 0
-    t.jsonb "permissions"
     t.datetime "published_at"
+    t.jsonb "permissions"
     t.string "participatory_space_type", null: false
     t.index ["participatory_space_id", "participatory_space_type"], name: "index_decidim_features_on_decidim_participatory_space"
   end
@@ -254,6 +274,7 @@ ActiveRecord::Schema.define(version: 20171117141705) do
     t.time "closed_at"
     t.float "latitude"
     t.float "longitude"
+    t.jsonb "extra"
     t.string "reference"
     t.boolean "registrations_enabled", default: false, null: false
     t.integer "available_slots", default: 0, null: false
@@ -328,13 +349,13 @@ ActiveRecord::Schema.define(version: 20171117141705) do
     t.string "twitter_handler"
     t.boolean "show_statistics", default: true
     t.string "favicon"
+    t.string "official_img_header"
+    t.string "official_img_footer"
+    t.string "official_url"
     t.string "instagram_handler"
     t.string "facebook_handler"
     t.string "youtube_handler"
     t.string "github_handler"
-    t.string "official_img_header"
-    t.string "official_img_footer"
-    t.string "official_url"
     t.string "reference_prefix", null: false
     t.string "secondary_hosts", default: [], array: true
     t.string "available_authorizations", default: [], array: true
@@ -373,6 +394,7 @@ ActiveRecord::Schema.define(version: 20171117141705) do
     t.datetime "updated_at", null: false
     t.boolean "active", default: false
     t.integer "position"
+    t.jsonb "extra"
     t.index ["decidim_participatory_process_id", "active"], name: "unique_index_to_avoid_duplicate_active_steps", unique: true, where: "(active = true)"
     t.index ["decidim_participatory_process_id", "position"], name: "index_unique_position_for_process", unique: true
     t.index ["decidim_participatory_process_id"], name: "index_decidim_processes_steps__on_decidim_process_id"
@@ -405,6 +427,7 @@ ActiveRecord::Schema.define(version: 20171117141705) do
     t.jsonb "developer_group"
     t.date "end_date"
     t.jsonb "meta_scope"
+    t.jsonb "extra"
     t.jsonb "local_area"
     t.jsonb "target"
     t.jsonb "participatory_scope"
@@ -439,6 +462,7 @@ ActiveRecord::Schema.define(version: 20171117141705) do
     t.datetime "updated_at", null: false
     t.integer "proposal_votes_count", default: 0, null: false
     t.integer "decidim_user_group_id"
+    t.jsonb "extra"
     t.string "state"
     t.datetime "answered_at"
     t.jsonb "answer"
@@ -575,20 +599,20 @@ ActiveRecord::Schema.define(version: 20171117141705) do
 
   create_table "decidim_user_groups", id: :serial, force: :cascade do |t|
     t.string "name", null: false
-    t.string "document_number", null: false
-    t.string "phone", null: false
+    t.string "document_number"
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
+    t.datetime "verified_at"
     t.datetime "rejected_at"
     t.integer "decidim_organization_id", null: false
-    t.datetime "verified_at"
     t.index ["decidim_organization_id", "document_number"], name: "index_decidim_user_groups_document_number_on_organization_id", unique: true
     t.index ["decidim_organization_id", "name"], name: "index_decidim_user_groups_names_on_organization_id", unique: true
   end
 
   create_table "decidim_users", id: :serial, force: :cascade do |t|
-    t.string "email", default: "", null: false
+    t.string "email", default: ""
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -613,9 +637,11 @@ ActiveRecord::Schema.define(version: 20171117141705) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "name", null: false
+    t.string "name"
     t.string "locale"
     t.string "avatar"
+    t.jsonb "extra"
+    t.datetime "imported_erased_at"
     t.boolean "newsletter_notifications", default: false, null: false
     t.text "delete_reason"
     t.datetime "deleted_at"
