@@ -143,6 +143,8 @@ GEM
       graphql (~> 1.6.0)
       rack-cors (~> 1.0.1)
       sprockets-es6 (~> 0.9.2)
+    decidim-assemblies (0.7.2)
+      decidim-core (= 0.7.2)
     decidim-budgets (0.7.2)
       decidim-comments (= 0.7.2)
       decidim-core (= 0.7.2)
@@ -628,6 +630,7 @@ DEPENDENCIES
   byebug
   dalli
   decidim (= 0.7.2)
+  decidim-assemblies
   decidim-deploy-heroku!
   decidim-dev (= 0.7.2)
   faker (~> 1.8.4)

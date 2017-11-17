@@ -7,7 +7,7 @@ ruby RUBY_VERSION
 gem "decidim", "0.7.2"
 
 # Uncomment the following line if you want to use decidim-assemblies plugin
-# gem "decidim-assemblies", "0.7.2"
+gem "decidim-assemblies"
 
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
