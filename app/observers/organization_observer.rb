@@ -10,4 +10,11 @@ class OrganizationObserver < ActiveRecord::Observer
     $heroku.domain.delete(app_name, organization.host_was) if organization.host_was.present?
     $heroku.domain.create(app_name, hostname: organization.host)
   end
+
+  def after_destroy(organization)
+    app_name = Rails.application.secrets.heroku_app_name
+    return unless app_name.present?
+
+    $heroku.domain.delete(app_name, organization.host)
+  end
 end
