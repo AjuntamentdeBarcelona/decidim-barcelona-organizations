@@ -12,6 +12,8 @@ gem "decidim-assemblies"
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
 
+gem 'rails-observers'
+
 gem "faker", "~> 1.8.4"
 gem "sidekiq"
 
@@ -39,4 +41,5 @@ group :production do
   gem 'lograge'
   gem 'sentry-raven'
   gem 'rails_autoscale_agent'
+  gem 'platform-api'
 end
