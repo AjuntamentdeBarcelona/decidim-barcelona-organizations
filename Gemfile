@@ -4,13 +4,13 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", "0.7.4"
+gem "decidim", "0.8.3"
 
 # Uncomment the following line if you want to use decidim-assemblies plugin
 gem "decidim-assemblies"
 
 gem "puma", "~> 3.0"
-gem "uglifier", ">= 1.3.0"
+gem "uglifier"
 
 gem 'rails-observers'
 
@@ -20,11 +20,11 @@ gem "sidekiq"
 group :development, :test do
   gem "byebug", platform: :mri
 
-  gem "decidim-dev", "0.7.4"
+  gem "decidim-dev"
+  gem "rspec-rails"
 end
 
 group :development do
-  gem "decidim-deploy-heroku", git: "https://github.com/codegram/decidim-deploy-heroku.git"
   gem "letter_opener_web", "~> 1.3.0"
   gem "listen", "~> 3.1.0"
   gem "spring"
