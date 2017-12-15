@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      - image: docker:17.09.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Login to docker
+          command: |
+            docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com
+      - run:
+          name: Pulling docker image
+          command: |
+            docker pull registry.heroku.com/metadecidim/web || true
+            docker pull registry.heroku.com/metadecidim/worker || true
+      - run:
+          name: Build image
+          command: |
+            docker build -f Dockerfile.web -t registry.heroku.com/metadecidim/web --cache-from registry.heroku.com/metadecidim/web .
+            docker build -f Dockerfile.worker -t registry.heroku.com/metadecidim/worker --cache-from registry.heroku.com/metadecidim/worker .
+      - run:
+          name: Push image
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker push registry.heroku.com/metadecidim/web
+              docker push registry.heroku.com/metadecidim/worker
+            fi

@@ -666,6 +666,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails-observers
   rails_autoscale_agent
+  rspec-rails
   sendgrid-ruby
   sentry-raven
   sidekiq
