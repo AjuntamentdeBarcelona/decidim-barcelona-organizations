@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/codegram/decidim-deploy-heroku.git
-  revision: 81c82146409590f084cd7969bb19088531885612
-  specs:
-    decidim-deploy-heroku (0.0.1)
-      decidim (~> 0.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -653,7 +646,6 @@ DEPENDENCIES
   dalli
   decidim (= 0.8.3)
   decidim-assemblies
-  decidim-deploy-heroku!
   decidim-dev
   faker (~> 1.8.4)
   fog-aws

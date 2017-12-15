@@ -25,7 +25,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "decidim-deploy-heroku", git: "https://github.com/codegram/decidim-deploy-heroku.git"
   gem "letter_opener_web", "~> 1.3.0"
   gem "listen", "~> 3.1.0"
   gem "spring"
