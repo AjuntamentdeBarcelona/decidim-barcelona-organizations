@@ -6,8 +6,9 @@ ruby RUBY_VERSION
 
 gem "decidim", "0.8.3"
 
-# Uncomment the following line if you want to use decidim-assemblies plugin
+# decidim additional feature modules
 gem "decidim-assemblies"
+gem "decidim-debates", git: "https://github.com/AjuntamentdeBarcelona/decidim-barcelona"
 
 gem "puma", "~> 3.0"
 gem "uglifier"

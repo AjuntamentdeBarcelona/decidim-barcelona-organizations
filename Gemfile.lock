@@ -1,3 +1,15 @@
+GIT
+  remote: https://github.com/AjuntamentdeBarcelona/decidim-barcelona
+  revision: 7d0e020324e00636171d0ae8d98eabed37397d3a
+  specs:
+    decidim-debates (0.0.1)
+      date_validator (~> 0.9)
+      decidim-comments
+      decidim-core
+      kaminari (~> 1.0.0.rc1)
+      rectify (~> 0.8)
+      searchlight (~> 4.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -646,6 +658,7 @@ DEPENDENCIES
   dalli
   decidim (= 0.8.3)
   decidim-assemblies
+  decidim-debates!
   decidim-dev
   faker (~> 1.8.4)
   fog-aws
