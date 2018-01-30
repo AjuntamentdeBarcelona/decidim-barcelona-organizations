@@ -41,7 +41,7 @@ Decidim.configure do |config|
   # that an organization's administrator injects malicious scripts to spy on or
   # take over user accounts.
   #
-  config.enable_html_header_snippets = false
+  config.enable_html_header_snippets = true
 
   if ENV["HEROKU_APP_NAME"].present?
     config.base_uploads_path = ENV["HEROKU_APP_NAME"] + "/"
