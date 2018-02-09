@@ -4,11 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", "0.8.3"
-
-# decidim additional feature modules
-gem "decidim-assemblies"
-gem "decidim-debates", git: "https://github.com/AjuntamentdeBarcelona/decidim-barcelona"
+gem "decidim", "0.9.2"
 
 gem "puma", "~> 3.0"
 gem "uglifier"
