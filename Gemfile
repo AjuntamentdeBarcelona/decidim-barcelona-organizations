@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", "0.9.2"
+gem "decidim", git: "https://github.com/decidim/decidim", branch: "extended_body_length"
 
 gem "puma", "~> 3.0"
 gem "uglifier"
