@@ -1,0 +1,7 @@
+es:
+  decidim:
+    proposals:
+      proposals:
+        voting_rules:
+          threshold_per_proposal:
+            description: Para ser validadas, las propuestas deben llegar a %{limit} apoyos
