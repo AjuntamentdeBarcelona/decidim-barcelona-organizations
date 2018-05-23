@@ -1,0 +1,7 @@
+ca:
+  decidim:
+    proposals:
+      proposals:
+        voting_rules:
+          threshold_per_proposal:
+            description: Per ser validades, les propostes han d'arribar a %{limit} suports
