@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/decidim/decidim.git
-  revision: 8d48b0cbd738b03d24708a83ca059c9ff1ccb799
+  revision: d9ce80c73f84c8257220309b0d3e33470fa2b6c5
   branch: 0.14-stable
   specs:
     decidim (0.14.4)
@@ -89,6 +89,7 @@ GIT
       pg (>= 0.18, < 2)
       pg_search (~> 2.1, >= 2.1.0)
       premailer-rails (~> 1.9)
+      rack (~> 2.0.6)
       rack-attack (~> 5.2)
       rails (>= 5.2, < 6.0.x)
       rails-i18n (~> 5.0)
