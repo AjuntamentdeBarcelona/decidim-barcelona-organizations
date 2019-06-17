@@ -7,9 +7,13 @@ ruby RUBY_VERSION
 DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "0.17-stable" }
 
 gem "decidim", DECIDIM_VERSION
+gem "decidim-initiatives", DECIDIM_VERSION
+gem "decidim-consultations", DECIDIM_VERSION
 
 gem "puma", "~> 3.0"
 gem "uglifier"
+gem "wicked_pdf"
+gem "wkhtmltopdf-binary"
 
 gem 'rails-observers'
 
