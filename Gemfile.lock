@@ -211,6 +211,14 @@ GIT
     decidim-verifications (0.19.0)
       decidim-core (= 0.19.0)
 
+GIT
+  remote: https://github.com/decidim/omniauth-decidim
+  revision: 2b7d087f1b581e06cc82b7716d09cc50e1d0e643
+  specs:
+    omniauth-decidim (0.1.0)
+      omniauth (~> 1.5)
+      omniauth-oauth2 (>= 1.4.0, < 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -831,6 +839,7 @@ DEPENDENCIES
   listen (~> 3.1.0)
   lograge
   newrelic_rpm
+  omniauth-decidim!
   passenger
   platform-api
   puma (~> 3)

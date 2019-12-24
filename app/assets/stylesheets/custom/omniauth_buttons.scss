@@ -1,0 +1,27 @@
+// Ajustements for Decidim (login with Barcelona) login button
+.button--social.button--decidim {
+  .button--social__icon {
+    padding-top: 0.7rem;
+    padding-bottom: 0.5rem;
+    svg {
+      width: auto;
+      height: 32px;
+    }
+  }
+}
+
+@media(max-width: 372px) {
+  .button--social.button--decidim {
+    padding: 0.5rem 1rem 0.5rem 3.7rem;
+    min-height: 3rem;
+    position: relative;
+    line-height: 1rem;
+
+    .button--social__icon {
+      position: absolute;
+      left:0;
+      top:0;
+      padding: 0.5em 0.5em;
+    }
+  }
+}

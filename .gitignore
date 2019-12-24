@@ -16,6 +16,7 @@
 /node_modules
 /yarn-error.log
 
+.rbenv-vars
 .byebug_history
 
 # Ignore public uploads
