@@ -378,7 +378,7 @@ GEM
     erubis (2.7.0)
     etherpad-lite (0.3.0)
       rest-client (>= 1.6)
-    excon (0.68.0)
+    excon (0.71.0)
     execjs (2.7.0)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
