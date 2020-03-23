@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-module-term_customizer
+  revision: c4ed0ffa87bd9977c6b470aa815d5dc2ed9f88a5
+  specs:
+    decidim-term_customizer (0.18.0)
+      decidim-admin (>= 0.18.0)
+      decidim-core (>= 0.18.0)
+
+GIT
   remote: https://github.com/decidim/decidim
   revision: b8ef312335fbda056d37ba41f04f1df91fc68a2d
   branch: 0.19-stable
@@ -826,6 +834,7 @@ DEPENDENCIES
   decidim-consultations!
   decidim-dev!
   decidim-initiatives!
+  decidim-term_customizer!
   faker (~> 1.8.4)
   fog-aws
   letter_opener_web (~> 1.3.0)
@@ -834,7 +843,7 @@ DEPENDENCIES
   newrelic_rpm
   passenger
   platform-api
-  puma (~> 3)
+  puma
   rails-observers
   rails_autoscale_agent
   rspec-rails
