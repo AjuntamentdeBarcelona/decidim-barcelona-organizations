@@ -9,6 +9,7 @@ services:
     environment:
       - PORT=3000
       - DATABASE_HOST=pg
+      - DATABASE_PASSWORD=changeme
       - DATABASE_USERNAME=postgres
       - RAILS_ENV=development
       - REDIS_URL=redis://redis:6379
@@ -34,6 +35,8 @@ services:
     command: bundle exec sidekiq
   pg:
     image: postgres
+    environment:
+      - POSTGRES_PASSWORD=changeme
     volumes:
       - pg-data:/var/lib/postgresql/data
   redis:
