@@ -352,6 +352,9 @@ GEM
     db-query-matchers (0.9.0)
       activesupport (>= 4.0, <= 6.0)
       rspec (~> 3.0)
+    decidim-direct_verifications (0.20)
+      decidim-admin (>= 0.17.0)
+      decidim-core (>= 0.17.0)
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
@@ -840,6 +843,7 @@ DEPENDENCIES
   decidim-conferences!
   decidim-consultations!
   decidim-dev!
+  decidim-direct_verifications
   decidim-initiatives!
   decidim-term_customizer!
   faker (~> 1.8.4)
