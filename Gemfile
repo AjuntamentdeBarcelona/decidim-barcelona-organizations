@@ -22,9 +22,6 @@ gem "uglifier"
 gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 
-# geocoder can not be upgraded to 1.6 until the Here maps api key is changed for the new one
-gem "geocoder", "~> 1.5.2"
-
 gem 'rails-observers'
 
 gem "faker", "~> 1.8.4"
