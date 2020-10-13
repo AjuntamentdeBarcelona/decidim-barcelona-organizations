@@ -5,3 +5,34 @@ es:
         voting_rules:
           threshold_per_proposal:
             description: Para ser validadas, las propuestas deben llegar a %{limit} apoyos
+    authorization_handlers:
+      direct_verifications:
+        name: Censo general
+        explanation: Verificación directa para el censo general
+      direct_verifications_grup1:
+        name: Grupo 1
+        explanation: Verificación directa para el censo de Grupo 1
+      direct_verifications_grup2:
+        name: Grupo 2
+        explanation: Verificación directa para el censo de Grupo 2
+      direct_verifications_grup3:
+        name: Grupo 3
+        explanation: Verificación directa para el censo de Grupo 3
+      direct_verifications_grup4:
+        name: Grupo 4
+        explanation: Verificación directa para el censo de Grupo 4
+      direct_verifications_grup5:
+        name: Grupo 5
+        explanation: Verificación directa para el censo de Grupo 5
+      direct_verifications_grup6:
+        name: Grupo 6
+        explanation: Verificación directa para el censo de Grupo 6
+      direct_verifications_grup7:
+        name: Grupo 7
+        explanation: Verificación directa para el censo de Grupo 7
+      direct_verifications_grup8:
+        name: Grupo 8
+        explanation: Verificación directa para el censo de Grupo 8
+      direct_verifications_grup9:
+        name: Grupo 9
+        explanation: Verificación directa para el censo de Grupo 9
