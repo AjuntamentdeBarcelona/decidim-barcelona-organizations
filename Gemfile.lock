@@ -642,7 +642,7 @@ GEM
       railties (>= 5.0, < 6)
     rails-observers (0.1.5)
       activemodel (>= 4.0)
-    rails_autoscale_agent (0.8.1)
+    rails_autoscale_agent (0.9.1)
     railties (5.2.4.4)
       actionpack (= 5.2.4.4)
       activesupport (= 5.2.4.4)
