@@ -5,3 +5,34 @@ ca:
         voting_rules:
           threshold_per_proposal:
             description: Per ser validades, les propostes han d'arribar a %{limit} suports
+    authorization_handlers:
+      direct_verifications:
+        name: Cens general
+        explanation: Verificació directa per al cens general
+      direct_verifications_grup1:
+        name: Grup 1
+        explanation: Verificació directa per al cens de Grup 1
+      direct_verifications_grup2:
+        name: Grup 2
+        explanation: Verificació directa per al cens de Grup 2
+      direct_verifications_grup3:
+        name: Grup 3
+        explanation: Verificació directa per al cens de Grup 3
+      direct_verifications_grup4:
+        name: Grup 4
+        explanation: Verificació directa per al cens de Grup 4
+      direct_verifications_grup5:
+        name: Grup 5
+        explanation: Verificació directa per al cens de Grup 5
+      direct_verifications_grup6:
+        name: Grup 6
+        explanation: Verificació directa per al cens de Grup 6
+      direct_verifications_grup7:
+        name: Grup 7
+        explanation: Verificació directa per al cens de Grup 7
+      direct_verifications_grup8:
+        name: Grup 8
+        explanation: Verificació directa per al cens de Grup 8
+      direct_verifications_grup9:
+        name: Grup 9
+        explanation: Verificació directa per al cens de Grup 9

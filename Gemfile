@@ -4,22 +4,23 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "0.19-stable" }
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "0.21-stable" }
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 # Change term_customizer dependency to ruby-gems' when term-customizer is compatible with DECIDIM_VERSION
-gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-module-term_customizer" 
+gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-module-term_customizer"
 
+# Decidim::DirectVerifications - https://github.com/Platoniq/decidim-verifications-direct_verifications
+gem "decidim-direct_verifications"
+
+gem "rails", "< 6"
 gem "puma"
 gem "uglifier"
 gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
-
-# geocoder can not be upgraded to 1.6 until the Here maps api key is changed for the new one
-gem "geocoder", "~> 1.5.2"
 
 gem 'rails-observers'
 
@@ -42,7 +43,6 @@ group :development do
 end
 
 group :production do
-  gem 'passenger'
   gem 'fog-aws'
   gem 'dalli'
   gem 'sendgrid-ruby'
