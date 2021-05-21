@@ -569,7 +569,7 @@ GEM
     newrelic_rpm (6.10.0.364)
     nio4r (2.5.7)
     nobspw (0.6.2)
-    nokogiri (1.11.3)
+    nokogiri (1.11.4)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     oauth (0.5.6)
