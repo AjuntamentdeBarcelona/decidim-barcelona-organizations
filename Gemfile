@@ -4,7 +4,9 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim.git", branch: "release/0.23-stable" }
+DECIDIM_MAIN_BRANCH = "release/0.24-stable"
+
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: DECIDIM_MAIN_BRANCH }.freeze
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
@@ -24,7 +26,7 @@ gem "wkhtmltopdf-binary"
 
 gem 'rails-observers'
 
-gem "faker", "~> 1.8.4"
+gem "faker", "~> 2.14.0"
 gem "sidekiq"
 
 group :development, :test do
