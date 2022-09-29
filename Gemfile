@@ -18,6 +18,8 @@ gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-m
 # Decidim::DirectVerifications - https://github.com/Platoniq/decidim-verifications-direct_verifications
 gem "decidim-direct_verifications"
 
+gem "decidim-decidim_awesome"
+
 gem "rails", "< 6"
 gem "puma"
 gem "uglifier"

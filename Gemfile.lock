@@ -368,6 +368,10 @@ GEM
     db-query-matchers (0.9.0)
       activesupport (>= 4.0, <= 6.0)
       rspec (~> 3.0)
+    decidim-decidim_awesome (0.7.2)
+      decidim-admin (>= 0.23.0, < 0.25)
+      decidim-core (>= 0.23.0, < 0.25)
+      sassc (~> 2.3)
     decidim-direct_verifications (0.22.1)
       decidim-admin (>= 0.22.0)
       decidim-core (>= 0.22.0)
@@ -909,6 +913,7 @@ DEPENDENCIES
   decidim!
   decidim-conferences!
   decidim-consultations!
+  decidim-decidim_awesome
   decidim-dev!
   decidim-direct_verifications
   decidim-initiatives!
