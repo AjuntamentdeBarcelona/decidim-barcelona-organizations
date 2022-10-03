@@ -16,7 +16,7 @@ gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: DECIDIM_MAIN_BRANCH
 
 # Decidim::DirectVerifications - https://github.com/Platoniq/decidim-verifications-direct_verifications
-gem "decidim-direct_verifications"
+gem "decidim-direct_verifications", "~> 1.2"
 
 gem "decidim-decidim_awesome", "~> 0.8"
 
@@ -40,7 +40,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "letter_opener_web", "~> 1.3.0"
+  gem "letter_opener_web", "~> 2.0.0"
   gem "listen", "~> 3.1.0"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
