@@ -1,5 +1,15 @@
 {
   "name": "decidim-barcelona-organizations",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@decidim/browserslist-config": "file:packages/browserslist-config",
+    "@decidim/core": "file:packages/core",
+    "@decidim/elections": "file:packages/elections",
+    "@decidim/webpacker": "file:packages/webpacker"
+  },
+  "devDependencies": {
+    "@decidim/dev": "file:packages/dev",
+    "@decidim/eslint-config": "file:packages/eslint-config",
+    "@decidim/stylelint-config": "file:packages/stylelint-config"
+  }
 }
