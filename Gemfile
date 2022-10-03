@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_MAIN_BRANCH = "release/0.24-stable"
+DECIDIM_MAIN_BRANCH = "release/0.25-stable"
 
 DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: DECIDIM_MAIN_BRANCH }.freeze
 
@@ -13,17 +13,16 @@ gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 # Change term_customizer dependency to ruby-gems' when term-customizer is compatible with DECIDIM_VERSION
-gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-module-term_customizer"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: DECIDIM_MAIN_BRANCH
 
 # Decidim::DirectVerifications - https://github.com/Platoniq/decidim-verifications-direct_verifications
 gem "decidim-direct_verifications"
 
-gem "decidim-decidim_awesome"
+gem "decidim-decidim_awesome", "~> 0.8"
 
-gem "rails", "< 6"
 gem "puma"
 gem "uglifier"
-gem "wicked_pdf"
+gem "wicked_pdf", "~> 2.1"
 gem "wkhtmltopdf-binary"
 
 gem 'rails-observers'
@@ -31,11 +30,13 @@ gem 'rails-observers'
 gem "faker", "~> 2.14.0"
 gem "sidekiq"
 
+gem "doorkeeper", "< 5.6"
+
 group :development, :test do
   gem "byebug", platform: :mri
 
   gem "decidim-dev", DECIDIM_VERSION
-  gem "rspec-rails"
+  gem "rspec-rails", "~> 4.0"
 end
 
 group :development do
