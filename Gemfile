@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_MAIN_BRANCH = "release/0.25-stable"
+DECIDIM_MAIN_BRANCH = "release/0.26-stable"
 
 DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: DECIDIM_MAIN_BRANCH }.freeze
 
@@ -31,6 +31,7 @@ gem "faker", "~> 2.14.0"
 gem "sidekiq"
 
 gem "doorkeeper", "< 5.6"
+gem "nobspw"
 
 group :development, :test do
   gem "byebug", platform: :mri
