@@ -852,6 +852,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-direct_verifications (~> 1.2)
   decidim-initiatives!
+  decidim-templates!
   decidim-term_customizer!
   doorkeeper (< 5.6)
   faker (~> 2.14.0)
