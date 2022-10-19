@@ -917,6 +917,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-direct_verifications
   decidim-initiatives!
+  decidim-templates!
   decidim-term_customizer!
   faker (~> 2.14.0)
   fog-aws
