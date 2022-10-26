@@ -555,7 +555,6 @@ GEM
     mustache (1.1.1)
     newrelic_rpm (6.10.0.364)
     nio4r (2.5.8)
-    nobspw (0.6.2)
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
@@ -879,7 +878,6 @@ DEPENDENCIES
   listen (~> 3.1.0)
   lograge
   newrelic_rpm
-  nobspw
   platform-api
   puma
   rails-observers

@@ -32,7 +32,6 @@ gem "faker", "~> 2.14.0"
 gem "sidekiq"
 
 gem "doorkeeper", "< 5.6"
-gem "nobspw"
 
 group :development, :test do
   gem "byebug", platform: :mri
