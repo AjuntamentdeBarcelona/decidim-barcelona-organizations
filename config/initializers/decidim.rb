@@ -4,6 +4,7 @@ Decidim.configure do |config|
   config.application_name = "Decidim Barcelona Organizations"
   config.mailer_sender = Rails.application.secrets.email
   config.authorization_handlers = []
+  config.throttling_max_requests = 10000
 
   # Change these lines to set your preferred locales
   config.default_locale = :ca
