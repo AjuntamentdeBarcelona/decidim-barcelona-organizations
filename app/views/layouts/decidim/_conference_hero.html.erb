@@ -31,32 +31,18 @@
         <% end %>
         <% current_participatory_space.components.where(manifest_name: "meetings").each do |component_meeting| %>
           <% if component_meeting.published? || component_meeting == self.try(:current_component) %>
-            <div class="column medium-3 end">
-              <%= link_to translated_attribute(component_meeting.name), decidim_conferences.conference_conference_program_path(current_participatory_space, id: component_meeting.id), class:"button button--sc light hollow expanded" %>
-            </div>
+            <% if component_meeting.id == 2723 %>
+                <div class="column medium-3 end">
+                  <%= link_to translated_attribute(component_meeting.name), main_component_path(component_meeting), class:"button button--sc light hollow expanded" %>
+                </div>
+              <% else %>
+                <div class="column medium-3 end">
+                  <%= link_to translated_attribute(component_meeting.name), decidim_conferences.conference_conference_program_path(current_participatory_space, id: component_meeting.id), class:"button button--sc light hollow expanded" %>
+                </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>
     </div>
   </div>
 </section>
-
-
-<!--
-Si quiere borrar el boton: en linea 33, sustituir por:
-<%# if (component_meeting.published? || component_meeting == self.try(:current_component)) && component_meeting.id != 2723 %>
--->
-
-<!--Si quiere redirigir: a partidr de linea 33 hasta la 38, sustituir por:
- <%# if component_meeting.published? || component_meeting == self.try(:current_component) %>
-  <%# if component_meeting.id == 2723 %>
-              <div class="column medium-3 end">
-                <%#= link_to translated_attribute(component_meeting.name), main_component_path(component_meeting), class:"button button--sc light hollow expanded" %>
-              </div>
-            <%# else %>
-            <div class="column medium-3 end">
-              <%#= link_to translated_attribute(component_meeting.name), decidim_conferences.conference_conference_program_path(current_participatory_space, id: component_meeting.id), class:"button button--sc light hollow expanded" %>
-            </div>
-          <%# end %>
-<%# end %>
-<%# end %>-->
