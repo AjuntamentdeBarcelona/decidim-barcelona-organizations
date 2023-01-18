@@ -33,5 +33,7 @@ end
 
 # We need to tell the plugin to handle this method in addition to the default "Direct verification". Any registered workflow is valid.
 Decidim::DirectVerifications.configure do |config|
-  config.manage_workflows = %w(direct_verifications_grup1 direct_verifications_grup2 direct_verifications_grup3 direct_verifications_grup4 direct_verifications_grup5 direct_verifications_grup6 direct_verifications_grup7 direct_verifications_grup8 direct_verifications_grup9)
+  config.manage_workflows = %w(direct_verifications_grup1 direct_verifications_grup2 direct_verifications_grup3
+                               direct_verifications_grup4 direct_verifications_grup5 direct_verifications_grup6
+                               direct_verifications_grup7 direct_verifications_grup8 direct_verifications_grup9)
 end

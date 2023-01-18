@@ -4,7 +4,7 @@ Decidim.configure do |config|
   config.application_name = "Decidim Barcelona Organizations"
   config.mailer_sender = Rails.application.secrets.email
   config.authorization_handlers = []
-  config.throttling_max_requests = 10000
+  config.throttling_max_requests = 10_000
 
   # Change these lines to set your preferred locales
   config.default_locale = :ca
@@ -48,13 +48,9 @@ Decidim.configure do |config|
   #
   config.enable_html_header_snippets = true
 
-  if ENV["HEROKU_APP_NAME"].present?
-    config.base_uploads_path = ENV["HEROKU_APP_NAME"] + "/"
-  end
+  config.base_uploads_path = "#{ENV["HEROKU_APP_NAME"]}/" if ENV["HEROKU_APP_NAME"].present?
 
-  if Rails.application.secrets.etherpad[:server].present?
-    config.etherpad = Rails.application.secrets.etherpad
-  end
+  config.etherpad = Rails.application.secrets.etherpad if Rails.application.secrets.etherpad[:server].present?
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
