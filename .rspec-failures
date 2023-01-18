@@ -1,3 +1,0 @@
-example_id                          | status | run_time     |
------------------------------------ | ------ | ------------ |
-./spec/system/homepage_spec.rb[1:1] | passed | 7.95 seconds |
