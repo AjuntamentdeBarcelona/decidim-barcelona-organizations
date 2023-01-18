@@ -35,6 +35,7 @@ gem "doorkeeper", "< 5.6"
 
 group :development, :test do
   gem "byebug", platform: :mri
+  gem "rubocop-faker"
 
   gem "decidim-dev", DECIDIM_VERSION
   gem "rspec-rails", "~> 4.0"
