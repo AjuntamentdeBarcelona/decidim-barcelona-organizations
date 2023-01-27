@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   config.active_job.queue_adapter = :sidekiq
   config.lograge.enabled = true
@@ -5,10 +7,10 @@ Rails.application.configure do
   config.lograge.custom_options = lambda do |event|
     {
       remote_ip: event.payload[:remote_ip],
-      params: event.payload[:params].except('controller', 'action', 'format', 'utf8'),
+      params: event.payload[:params].except("controller", "action", "format", "utf8"),
       user_id: event.payload[:user_id],
       organization_id: event.payload[:organization_id],
-      referer: event.payload[:referer],
+      referer: event.payload[:referer]
     }
   end
   # Settings specified here will take precedence over those in config/application.rb.
@@ -23,7 +25,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
 
   # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
@@ -33,7 +35,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
@@ -58,7 +60,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
   # if ENV["MEMCACHEDCLOUD_SERVERS"].present?
@@ -66,10 +68,10 @@ Rails.application.configure do
   #     username: ENV["MEMCACHEDCLOUD_USERNAME"], password: ENV["MEMCACHEDCLOUD_PASSWORD"]
   #   }
   # end
-  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
+  config.cache_store = :redis_cache_store, { url: ENV["REDIS_URL"] }
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
-  config.active_job.queue_adapter     = :sidekiq
+  config.active_job.queue_adapter = :sidekiq
   # config.active_job.queue_name_prefix = "decidim-barcelona-organizations_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
@@ -87,36 +89,35 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   config.action_mailer.smtp_settings = {
-    :address        => Rails.application.secrets.smtp_address,
-    :port           => Rails.application.secrets.smtp_port,
-    :authentication => Rails.application.secrets.smtp_authentication,
-    :user_name      => Rails.application.secrets.smtp_username,
-    :password       => Rails.application.secrets.smtp_password,
-    :domain         => Rails.application.secrets.smtp_domain,
-    :enable_starttls_auto => Rails.application.secrets.smtp_starttls_auto,
-    :openssl_verify_mode => 'none'
+    address: Rails.application.secrets.smtp_address,
+    port: Rails.application.secrets.smtp_port,
+    authentication: Rails.application.secrets.smtp_authentication,
+    user_name: Rails.application.secrets.smtp_username,
+    password: Rails.application.secrets.smtp_password,
+    domain: Rails.application.secrets.smtp_domain,
+    enable_starttls_auto: Rails.application.secrets.smtp_starttls_auto,
+    openssl_verify_mode: "none"
   }
 
   if Rails.application.secrets.sendgrid
     config.action_mailer.default_options = {
       "X-SMTPAPI" => {
-        filters:  {
+        filters: {
           clicktrack: { settings: { enable: 0 } },
-          opentrack:  { settings: { enable: 0 } }
+          opentrack: { settings: { enable: 0 } }
         }
       }.to_json
     }
   end
-
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger = ActiveSupport::Logger.new($stdout)
     logger.formatter = config.log_formatter
-    config.logger    = ActiveSupport::TaggedLogging.new(logger)
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
   # Do not dump schema after migrations.

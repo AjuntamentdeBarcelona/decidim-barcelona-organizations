@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
@@ -19,14 +21,13 @@ class ApplicationController < ActionController::Base
   end
 
   def domain_authentications
-    @domain_authentications ||= ENV['DOMAIN_AUTHENTICATIONS'].to_s.split(',').inject({}) do |result, authentication|
-      domain, credentials = authentication.strip.split('@')
-      user, password = credentials.split(':')
+    @domain_authentications ||= ENV["DOMAIN_AUTHENTICATIONS"].to_s.split(",").each_with_object({}) do |authentication, result|
+      domain, credentials = authentication.strip.split("@")
+      user, password = credentials.split(":")
       result[domain] = {
         user: user,
         password: password
       }
-      result
     end
   end
 end
