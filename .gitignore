@@ -29,3 +29,4 @@ yarn-debug.log*
 /storage/*
 
 .rspec-failures
+.rbenv-vars
