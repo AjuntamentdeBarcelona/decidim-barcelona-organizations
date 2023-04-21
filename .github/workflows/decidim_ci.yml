@@ -8,7 +8,7 @@ env:
 jobs:
   tests:
     name: Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     services:
       postgres:
         image: postgres:11
@@ -40,7 +40,7 @@ jobs:
         name: Setup database
       - name: Precompile assets
         run: |
-          yarn install
+          npm install
           bundle exec rake assets:precompile
       - run: bundle exec rspec
         name: Run specs
