@@ -9,5 +9,5 @@ if Rails.env.production?
     config.redis = { url: ENV["REDIS_URL"], ssl_params: { verify_mode: OpenSSL::SSL::VERIFY_NONE } }
   end
 
-  Sidekiq.strict_args!(false)
+  Sidekiq.strict_args!(false) if Gem.loaded_specs["sidekiq"].version >= Gem::Version.create("7")
 end
