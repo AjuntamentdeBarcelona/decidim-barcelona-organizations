@@ -1,3 +1,21 @@
-inherit_from:
-  - .rubocop_ruby.yml
-  - .rubocop_rails.yml
+inherit_from: https://raw.githubusercontent.com/decidim/decidim/release/0.27-stable/.rubocop.yml
+
+AllCops:
+  Include:
+    - "**/*.rb"
+    - "**/*.rake"
+    - "**/*.ru"
+    - "**/Gemfile"
+    - "**/Rakefile"
+  Exclude:
+    - "development_app/**/*"
+    - "**/development_app/**/*"
+    - "spec/decidim_dummy_app/**/*"
+    - "**/spec/decidim_dummy_app/**/*"
+    - "bin/**/*"
+    - "node_modules/**/*"
+    - "**/node_modules/**/*"
+    - "db/schema.rb"
+    - "db/migrate/*"
+    - "vendor/**/*"
+    - "**/vendor/**/*"
