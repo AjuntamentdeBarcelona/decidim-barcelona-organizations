@@ -50,7 +50,6 @@ group :production do
   gem "dalli"
   gem "fog-aws"
   gem "lograge"
-  gem "newrelic_rpm"
   gem "platform-api"
   gem "rails_autoscale_agent"
   gem "sendgrid-ruby"
