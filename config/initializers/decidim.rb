@@ -41,11 +41,12 @@ Decidim.configure do |config|
   # Map and Geocoder configuration
   #
   # == HERE Maps ==
-  config.maps = {
-    provider: :here,
-    api_key: Rails.application.secrets.maps[:api_key],
-    static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" }
-  }
+  # config.maps = {
+  #   provider: :here,
+  #   api_key: Rails.application.secrets.maps[:api_key],
+  #   static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" }
+  # }
+  #
   # == OpenStreetMap (OSM) services ==
   # To use the OSM map service providers, you will need a service provider for
   # the following map servers or host all of them yourself:
@@ -94,12 +95,20 @@ Decidim.configure do |config|
   # settings. The maps configuration will manage which geocoding service to use,
   # so that does not need any additional configuration here. Use this only for
   # the global geocoder preferences.
+  # config.geocoder = {
+  #   # geocoding service request timeout, in seconds (default 3):
+  #   timeout: 5,
+  #   # set default units to kilometers:
+  #   units: :km,
+  #   # caching (see https://github.com/alexreisner/geocoder#caching for details):
+  #   cache: Redis.new,
+  #   cache_prefix: "..."
+  # }
   config.geocoder = {
-    # geocoding service request timeout, in seconds (default 3):
     timeout: 5,
-    # set default units to kilometers:
     units: :km
   }
+
   if Rails.application.secrets.maps.present? && Rails.application.secrets.maps[:static_provider].present?
     static_provider = Rails.application.secrets.maps[:static_provider]
     dynamic_provider = Rails.application.secrets.maps[:dynamic_provider]
@@ -216,7 +225,7 @@ Decidim.configure do |config|
   #   end
   # end
   #
-  config.sms_gateway_service = 'Decidim::Verifications::Sms::ExampleGateway'
+  # config.sms_gateway_service = 'Decidim::Verifications::Sms::ExampleGateway'
 
   # Timestamp service configuration
   #
@@ -241,7 +250,7 @@ Decidim.configure do |config|
   # end
   #
   #
-  config.timestamp_service = "Decidim::Initiatives::DummyTimestamp"
+  # config.timestamp_service = "Decidim::Initiatives::DummyTimestamp"
 
   # PDF signature service configuration
   #
@@ -264,7 +273,7 @@ Decidim.configure do |config|
   #   end
   # end
   #
-  config.pdf_signature_service = "Decidim::Initiatives::PdfSignatureExample"
+  # config.pdf_signature_service = "Decidim::Initiatives::PdfSignatureExample"
 
   # Etherpad configuration
   #
@@ -325,7 +334,7 @@ Decidim.configure do |config|
   #   end
   # end
   #
-  config.machine_translation_service = 'Decidim::Dev::DummyTranslator'
+  # config.machine_translation_service = 'Decidim::Dev::DummyTranslator'
 
   # Defines the name of the cookie used to check if the user allows Decidim to
   # set cookies.
@@ -381,8 +390,6 @@ Decidim.configure do |config|
   config.maximum_conversation_message_length = Rails.application.secrets.decidim[:maximum_conversation_message_length].to_i
   config.password_blacklist = Rails.application.secrets.decidim[:password_blacklist] if Rails.application.secrets.decidim[:password_blacklist].present?
   config.allow_open_redirects = Rails.application.secrets.decidim[:allow_open_redirects] if Rails.application.secrets.decidim[:allow_open_redirects].present?
-
-  config.authorization_handlers = []
 end
 
 if Decidim.module_installed? :api
