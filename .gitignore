@@ -38,4 +38,4 @@ public/sw.js.map.br
 public/sw.js.gz
 public/sw.js.map.gz
 
-.rubocop*
+.rubocop-http*
