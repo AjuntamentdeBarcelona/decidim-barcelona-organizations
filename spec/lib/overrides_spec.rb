@@ -10,8 +10,8 @@ checksums = [
     package: "decidim-conferences",
     files: {
       "/app/views/layouts/decidim/_conference_hero.html.erb" => "db2e565169a5ce7f8a3e7d03dd0ebfd9",
-      "/app/views/layouts/decidim/_conferences_nav.html.erb" => "3911afb1f1d51a933ee44e2676f6d334",
-      "/app/views/decidim/conferences/conferences/show.html.erb" => "2a39789fdca15b55f9a8eee8d6af9184"
+      "/app/views/layouts/decidim/_conferences_nav.html.erb" => "65d135dc663b18be367a7c514ae7c0a6",
+      "/app/views/decidim/conferences/conferences/show.html.erb" => "94e3fb8ee4e092678ce0f229c87e1bc0"
     }
   }
 ]

@@ -101,7 +101,9 @@ RSpec.configure do |config|
   config.before do
     I18n.available_locales = [:en, :ca, :es]
     I18n.default_locale = :en
+    # rubocop:disable Rails/I18nLocaleAssignment
     I18n.locale = :en
+    # rubocop:enable Rails/I18nLocaleAssignment
     Decidim.available_locales = [:en, :ca, :es]
     Decidim.default_locale = :en
   end
