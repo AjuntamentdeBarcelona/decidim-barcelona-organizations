@@ -34,7 +34,7 @@ describe "Custom styles", type: :system do
       expect(page.body).not_to have_content("body {background: red;}")
     end
 
-    it "css is not applyied" do
+    it "css is not applied" do
       expect(page.execute_script("return window.getComputedStyle($('body')[0]).backgroundColor")).to eq("rgb(250, 250, 250)")
     end
   end
