@@ -8,10 +8,10 @@ env:
 jobs:
   tests:
     name: Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     services:
       postgres:
-        image: postgres:11
+        image: postgres:16
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
@@ -21,7 +21,7 @@ jobs:
         env:
           POSTGRES_PASSWORD: postgres
       redis:
-        image: redis:3.2-alpine
+        image: redis:latest
         ports: ["6379:6379"]
     env:
       DATABASE_USERNAME: postgres
@@ -29,17 +29,21 @@ jobs:
       DATABASE_HOST: localhost
       RAILS_ENV: test
     steps:
-      - uses: actions/checkout@v2.0.0
+      - uses: actions/checkout@v4.0.0
         with:
           fetch-depth: 1
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
+      - uses: actions/setup-node@master
+        with:
+          node-version: ${{ env.NODE_VERSION }}
       - run: bundle exec rake db:test:prepare
         name: Setup database
       - name: Precompile assets
         run: |
+          sudo apt-get install imagemagick
           npm install
           bundle exec rake assets:precompile
       - run: bundle exec rspec
