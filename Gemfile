@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/0.27-stable" }
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/0.27-stable" }.freeze
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
@@ -43,6 +43,14 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", "~> 4.2"
+
+  gem "capistrano", "~> 3.19"
+  gem "capistrano3-puma", "~> 6.0"
+  gem "capistrano-bundler", "~> 2.1"
+  gem "capistrano-rails", "~> 1.7"
+  gem "capistrano-rails-console", "~> 2.3"
+  gem "capistrano-rbenv", "~> 2.2"
+  gem "capistrano-sidekiq", "~> 3.0"
 end
 
 group :production do
