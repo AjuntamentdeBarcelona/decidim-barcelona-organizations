@@ -21,7 +21,7 @@ jobs:
         env:
           POSTGRES_PASSWORD: postgres
       redis:
-        image: redis:latest
+        image: redis:7
         ports: ["6379:6379"]
     env:
       DATABASE_USERNAME: postgres
