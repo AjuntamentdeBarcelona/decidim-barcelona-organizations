@@ -62,4 +62,5 @@ group :production do
   gem "rails_autoscale_agent"
   gem "sendgrid-ruby"
   gem "sentry-raven"
+  gem "whenever", require: false
 end
