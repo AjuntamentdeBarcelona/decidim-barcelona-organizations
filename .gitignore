@@ -39,3 +39,8 @@ public/sw.js.gz
 public/sw.js.map.gz
 
 .rubocop-http*
+
+/Capfile
+config/deploy/*
+config/deploy.rb
+
