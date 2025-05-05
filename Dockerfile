@@ -1,26 +1,42 @@
-FROM ruby:2.3.3
-MAINTAINER david.morcillo@codegram.com
+# Decidim Application Dockerfile
+# This is an image to start an application based on Decidim (https://decidim.org)
+#
+#
 
-ARG rails_env=production
-ARG secret_key_base=
 
-ENV APP_HOME /code
-ENV RAILS_ENV $rails_env
-ENV SECRET_KEY_BASE $secret_key_base
+# Starts with a clean ruby image from Debian (slim)
+FROM ruby:2.6.3
 
-RUN apt-get update
+LABEL maintainer="hola@decidim.org"
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash && \
-    apt-get install -y nodejs
+# Installs system dependencies
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update -qq && apt-get install -y \
+    build-essential \
+    graphviz \
+    imagemagick \
+    libicu-dev \
+    libpq-dev \
+    nodejs \
+    && rm -rf /var/lib/apt/lists/*
 
-ADD Gemfile /tmp/Gemfile
-ADD Gemfile.lock /tmp/Gemfile.lock
-RUN cd /tmp && bundle install
+# Sets workdir as /app
+RUN mkdir /app
+WORKDIR /app
 
-RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME
-ADD . $APP_HOME
+# Installs bundler dependencies
+ENV \
+  BUNDLE_BIN=/usr/local/bundle/bin \
+  BUNDLE_JOBS=10 \
+  BUNDLE_PATH=/usr/local/bundle \
+  BUNDLE_RETRY=3 \
+  GEM_HOME=/bundle
+ENV PATH="${BUNDLE_BIN}:${PATH}"
 
-RUN bundle exec rake DATABASE_URL=postgresql://user:pass@127.0.0.1/dbname assets:precompile
+# Copy Gemfile and install bundler dependencies
+ADD Gemfile Gemfile.lock /app/
+RUN gem install bundler:2.0.1
+RUN bundle install
 
-CMD ["bundle", "exec", "rails", "s", "-b0.0.0.0"]
+# Copy all the code to /app
+ADD . /app
