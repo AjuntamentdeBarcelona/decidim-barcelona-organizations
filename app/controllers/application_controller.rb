@@ -25,8 +25,8 @@ class ApplicationController < ActionController::Base
       domain, credentials = authentication.strip.split("@")
       user, password = credentials.split(":")
       result[domain] = {
-        user: user,
-        password: password
+        user:,
+        password:
       }
     end
   end

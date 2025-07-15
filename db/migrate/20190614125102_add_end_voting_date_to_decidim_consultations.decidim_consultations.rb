@@ -1,5 +1,5 @@
-# frozen_string_literal: true
 # This migration comes from decidim_consultations (originally 20180115132000)
+# frozen_string_literal: true
 
 class AddEndVotingDateToDecidimConsultations < ActiveRecord::Migration[5.1]
   class Consultation < ApplicationRecord

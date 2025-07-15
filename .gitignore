@@ -44,3 +44,4 @@ public/sw.js.map.gz
 config/deploy/*
 config/deploy.rb
 
+tailwind.config.js

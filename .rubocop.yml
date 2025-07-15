@@ -1,4 +1,11 @@
-inherit_from: https://raw.githubusercontent.com/decidim/decidim/release/0.27-stable/.rubocop.yml
+inherit_from: .rubocop_todo.yml
+
+inherit_gem:
+  decidim-dev: rubocop-decidim.yml
+
+inherit_mode:
+  merge:
+    - Exclude
 
 AllCops:
   Include:
@@ -8,8 +15,6 @@ AllCops:
     - "**/Gemfile"
     - "**/Rakefile"
   Exclude:
-    - "development_app/**/*"
-    - "**/development_app/**/*"
     - "spec/decidim_dummy_app/**/*"
     - "**/spec/decidim_dummy_app/**/*"
     - "bin/**/*"
