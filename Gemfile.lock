@@ -384,7 +384,7 @@ GEM
     cells-rails (0.1.5)
       actionpack (>= 5.0)
       cells (>= 4.1.6, < 5.0.0)
-    charlock_holmes (0.7.7)
+    charlock_holmes (0.7.9)
     chef-utils (18.3.0)
       concurrent-ruby
     childprocess (4.1.0)
