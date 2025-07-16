@@ -9,9 +9,9 @@ checksums = [
   {
     package: "decidim-conferences",
     files: {
-      "/app/helpers/decidim/conferences/conference_helper.rb" => "1bc756869b024713e4c182287853bd36",
+      "/app/helpers/decidim/conferences/conference_helper.rb" => "94f59c0b9fdf194c3108d401dd1afbbd",
       "/app/views/decidim/conferences/conferences/_conference_hero.html.erb" => "da4e86d29cf4272356d4bed6130d641f",
-      "/app/views/decidim/conferences/conferences/show.html.erb" => "eb94f807d798fe1ed4d1404dd1dfcad9"
+      "/app/views/decidim/conferences/conferences/show.html.erb" => "f473d522ddc4c5f3352f3fc55cffdd7d"
     }
   }
 ]

@@ -22,12 +22,12 @@ default: &default
   cache_manifest: false
 
   # Select loader to use, available options are 'babel' (default), 'swc' or 'esbuild'
-  webpack_loader: 'babel'
+  webpack_loader: 'esbuild'
 
   # Set to true to enable check for matching versions of shakapacker gem and NPM package - will raise an error if there is a mismatch or wildcard versioning is used
   ensure_consistent_versioning: true
 
-  # Select whether the compiler will use SHA digest ('digest' option) or most most recent modified timestamp ('mtime') to determine freshness
+  # Select whether the compiler will use SHA digest ('digest' option) or most recent modified timestamp ('mtime') to determine freshness
   compiler_strategy: digest
 
   # Select whether the compiler will always use a content hash and not just in production
@@ -62,6 +62,8 @@ development:
       #  port: 8080
     # Should we use gzip compression?
     compress: true
+    # Disable live reloading for faster development experience
+    live_reload: false
     # Note that apps that do not check the host are vulnerable to DNS rebinding attacks
     allowed_hosts: "all"
     pretty: true
