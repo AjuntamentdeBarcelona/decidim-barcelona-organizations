@@ -987,12 +987,12 @@ DEPENDENCIES
   capistrano-sidekiq (~> 3.0)
   capistrano3-puma (~> 6.0)
   dalli
-  decidim (~> 0.30.0)
-  decidim-conferences (~> 0.30.0)
-  decidim-dev (~> 0.30.0)
+  decidim (~> 0.30.1)
+  decidim-conferences (~> 0.30.1)
+  decidim-dev (~> 0.30.1)
   decidim-direct_verifications!
-  decidim-initiatives (~> 0.30.0)
-  decidim-templates (~> 0.30.0)
+  decidim-initiatives (~> 0.30.1)
+  decidim-templates (~> 0.30.1)
   decidim-term_customizer!
   faker
   fog-aws
