@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim_conferences (originally 20180626151505)
 
+# This migration comes from decidim_conferences (originally 20180626151505)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-08-11 12:26:28 UTC
 class AddConferences < ActiveRecord::Migration[5.2]
   def change
     create_table :decidim_conferences do |t|

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
-# This migration comes from decidim_accountability (originally 20200320105903)
 
+# This migration comes from decidim_accountability (originally 20200320105903)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-08-11 12:26:27 UTC
 class IndexForeignKeysInDecidimAccountabilityResults < ActiveRecord::Migration[5.2]
   def change
-    # This index already exists in production
-    # add_index :decidim_accountability_results, :external_id
+    add_index :decidim_accountability_results, :external_id
   end
 end
