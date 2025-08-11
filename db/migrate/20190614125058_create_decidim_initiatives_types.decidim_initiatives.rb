@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim_initiatives (originally 20170906091626)
 
+# This migration comes from decidim_initiatives (originally 20170906091626)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-08-11 12:26:28 UTC
 class CreateDecidimInitiativesTypes < ActiveRecord::Migration[5.1]
   def change
     create_table :decidim_initiatives_types do |t|

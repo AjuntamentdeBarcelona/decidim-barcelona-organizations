@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim_conferences (originally 20181010133930)
 
+# This migration comes from decidim_conferences (originally 20181010133930)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-08-11 12:26:28 UTC
 class AddRelationBetweenSpeakerAndMeeting < ActiveRecord::Migration[5.2]
   def change
     create_table :decidim_conference_speaker_conference_meetings do |t|

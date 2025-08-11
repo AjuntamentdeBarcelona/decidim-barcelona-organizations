@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim_initiatives (originally 20171017091734)
 
+# This migration comes from decidim_initiatives (originally 20171017091734)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-08-11 12:26:28 UTC
 class AddScopesForAllInitiativeTypes < ActiveRecord::Migration[5.1]
   class Scope < ApplicationRecord
     self.table_name = :decidim_scopes
@@ -29,7 +30,7 @@ class AddScopesForAllInitiativeTypes < ActiveRecord::Migration[5.1]
     # environment consistent with the underlying data model. It is
     # not relevant for production environments.
     Organization.find_each do |organization|
-      InitiativesType.where(organization: organization).find_each do |type|
+      InitiativesType.where(organization:).find_each do |type|
         organization.scopes.each do |scope|
           InitiativesTypeScope.create(
             decidim_initiatives_types_id: type.id,

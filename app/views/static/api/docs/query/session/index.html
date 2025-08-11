@@ -1,81 +1,25 @@
 <div class="content"><h1>
-<a id="assemblymember" class="anchor" href="#assemblymember" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AssemblyMember</h1>
-<p>An assembly member</p>
+<a id="session" class="anchor" href="#session" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>session</h1>
+<p>Return's information about the logged in user</p>
 <h2>
-<a id="fields" class="anchor" href="#fields" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fields</h2>
-<div class="field-entry ">
-  <span id="id" class="field-name anchored">id (<code><a href="/api/docs/scalar/id">ID!</a></code>)</span>
-  <div class="description-wrapper">
-   <p>Internal ID of the member</p>
-  </div>
-</div>
-<div class="field-entry ">
-  <span id="fullname" class="field-name anchored">fullName (<code><a href="/api/docs/scalar/string">String</a></code>)</span>
-  <div class="description-wrapper">
-   <p>Full name of the member</p>
-  </div>
-</div>
-<div class="field-entry ">
-  <span id="position" class="field-name anchored">position (<code><a href="/api/docs/scalar/string">String</a></code>)</span>
-  <div class="description-wrapper">
-   <p>Position of the member in the assembly</p>
-  </div>
-</div>
+<a id="return-fields" class="anchor" href="#return-fields" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Return fields</h2>
 <div class="field-entry ">
   <span id="user" class="field-name anchored">user (<code><a href="/api/docs/object/user">User</a></code>)</span>
   <div class="description-wrapper">
-   <p>The corresponding decidim user</p>
+   <p>The current user</p>
   </div>
 </div>
 <div class="field-entry ">
-  <span id="createdat" class="field-name anchored">createdAt (<code><a href="/api/docs/scalar/datetime">DateTime</a></code>)</span>
+  <span id="verifiedusergroups" class="field-name anchored">verifiedUserGroups (<code><a href="/api/docs/object/usergroup">[UserGroup!]!</a></code>)</span>
   <div class="description-wrapper">
-   <p>The time this member was created</p>
-  </div>
-</div>
-<div class="field-entry ">
-  <span id="updatedat" class="field-name anchored">updatedAt (<code><a href="/api/docs/scalar/datetime">DateTime</a></code>)</span>
-  <div class="description-wrapper">
-   <p>The time this member was updated</p>
-  </div>
-</div>
-<div class="field-entry ">
-  <span id="weight" class="field-name anchored">weight (<code><a href="/api/docs/scalar/int">Int</a></code>)</span>
-  <div class="description-wrapper">
-   <p>Order of appearance in which it should be represented</p>
-  </div>
-</div>
-<div class="field-entry ">
-  <span id="gender" class="field-name anchored">gender (<code><a href="/api/docs/scalar/string">String</a></code>)</span>
-  <div class="description-wrapper">
-   <p>Gender of the member</p>
-  </div>
-</div>
-<div class="field-entry ">
-  <span id="birthplace" class="field-name anchored">birthplace (<code><a href="/api/docs/scalar/string">String</a></code>)</span>
-  <div class="description-wrapper">
-   <p>Birthplace of the member</p>
-  </div>
-</div>
-<div class="field-entry ">
-  <span id="designationdate" class="field-name anchored">designationDate (<code><a href="/api/docs/scalar/date">Date</a></code>)</span>
-  <div class="description-wrapper">
-   <p>Date of designation of the member</p>
-  </div>
-</div>
-<div class="field-entry ">
-  <span id="positionother" class="field-name anchored">positionOther (<code><a href="/api/docs/scalar/string">String</a></code>)</span>
-  <div class="description-wrapper">
-   <p>Custom position name</p>
-  </div>
-</div>
-<div class="field-entry ">
-  <span id="ceaseddate" class="field-name anchored">ceasedDate (<code><a href="/api/docs/scalar/date">Date</a></code>)</span>
-  <div class="description-wrapper">
-   <p>Date of cease for the member</p>
+   <p>The current user verified user groups</p>
   </div>
 </div></div>
-<div id="sidebar"><ul class="categories">
+<div id="sidebar"><div id="search">
+  <img src="/api/docs/assets/images/search.svg">
+  <input autocomplete="off" placeholder="Search" />
+</div>
+<ul class="categories">
   <li>
     <ul class="menu-root">
       <li>
@@ -84,7 +28,7 @@
   </li>
 
   <li>
-    <p>Queries</p>
+    <p>Operations</p>
     <ul class="menu-root">
       <li>
         <a href="/api/docs/operation/query/" class="sidebar-link">
@@ -96,6 +40,209 @@
           Mutation
         </a>
       </li>
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/api/docs/operation/query">Queries</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/api/docs/query/assemblies/" class="sidebar-link">
+          assemblies
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/assembliestype/" class="sidebar-link">
+          assembliesType
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/assembliestypes/" class="sidebar-link">
+          assembliesTypes
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/assembly/" class="sidebar-link">
+          assembly
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/commentable/" class="sidebar-link">
+          commentable
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/component/" class="sidebar-link">
+          component
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/conference/" class="sidebar-link">
+          conference
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/conferences/" class="sidebar-link">
+          conferences
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/decidim/" class="sidebar-link">
+          decidim
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/hashtags/" class="sidebar-link">
+          hashtags
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/initiative/" class="sidebar-link">
+          initiative
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/initiatives/" class="sidebar-link">
+          initiatives
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/initiativestype/" class="sidebar-link">
+          initiativesType
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/initiativestypes/" class="sidebar-link">
+          initiativesTypes
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/metrics/" class="sidebar-link">
+          metrics
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/organization/" class="sidebar-link">
+          organization
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/participatoryprocess/" class="sidebar-link">
+          participatoryProcess
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/participatoryprocessgroup/" class="sidebar-link">
+          participatoryProcessGroup
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/participatoryprocessgroups/" class="sidebar-link">
+          participatoryProcessGroups
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/participatoryprocesstype/" class="sidebar-link">
+          participatoryProcessType
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/participatoryprocesstypes/" class="sidebar-link">
+          participatoryProcessTypes
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/participatoryprocesses/" class="sidebar-link">
+          participatoryProcesses
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/session/" class="sidebar-link">
+          session
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/user/" class="sidebar-link">
+          user
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/query/users/" class="sidebar-link">
+          users
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <p><a href="/api/docs/operation/mutation">Mutations</a></p>
+    <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/api/docs/mutation/comment/" class="sidebar-link">
+          comment
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/mutation/commentable/" class="sidebar-link">
+          commentable
+        </a>
+      </li>
+      
     </ul>
   </li>
 
@@ -149,13 +296,6 @@
       <li>
         <a href="/api/docs/object/assembly/" class="sidebar-link">
           Assembly
-        </a>
-      </li>
-      
-        
-      <li>
-        <a href="/api/docs/object/assemblymember/" class="sidebar-link">
-          AssemblyMember
         </a>
       </li>
       
@@ -226,13 +366,6 @@
       <li>
         <a href="/api/docs/object/commentablemutation/" class="sidebar-link">
           CommentableMutation
-        </a>
-      </li>
-      
-        
-      <li>
-        <a href="/api/docs/object/component/" class="sidebar-link">
-          Component
         </a>
       </li>
       
@@ -338,13 +471,6 @@
       <li>
         <a href="/api/docs/object/initiativetype/" class="sidebar-link">
           InitiativeType
-        </a>
-      </li>
-      
-        
-      <li>
-        <a href="/api/docs/object/localizedcustomfields/" class="sidebar-link">
-          LocalizedCustomFields
         </a>
       </li>
       
@@ -693,6 +819,13 @@
       
         
       <li>
+        <a href="/api/docs/object/taxonomy/" class="sidebar-link">
+          Taxonomy
+        </a>
+      </li>
+      
+        
+      <li>
         <a href="/api/docs/object/timelineentry/" class="sidebar-link">
           TimelineEntry
         </a>
@@ -702,13 +835,6 @@
       <li>
         <a href="/api/docs/object/traceversion/" class="sidebar-link">
           TraceVersion
-        </a>
-      </li>
-      
-        
-      <li>
-        <a href="/api/docs/object/translatedcustomfields/" class="sidebar-link">
-          TranslatedCustomFields
         </a>
       </li>
       
@@ -779,27 +905,6 @@
   </li>
 
   <li>
-    <p><a href="/api/docs/operation/mutation">Mutations</a></p>
-    <ul class="menu-root">
-      
-      
-      <li>
-        <a href="/api/docs/mutation/comment/" class="sidebar-link">
-          comment
-        </a>
-      </li>
-      
-      
-      <li>
-        <a href="/api/docs/mutation/commentable/" class="sidebar-link">
-          commentable
-        </a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
     <p><a href="/api/docs/interface">Interfaces</a></p>
     <ul class="menu-root">
       
@@ -842,13 +947,6 @@
         <li>
           <a href="/api/docs/interface/categoriescontainerinterface/" class="sidebar-link">
             CategoriesContainerInterface
-          </a>
-        </li>
-      
-        
-        <li>
-          <a href="/api/docs/interface/categorizableinterface/" class="sidebar-link">
-            CategorizableInterface
           </a>
         </li>
       
@@ -933,6 +1031,13 @@
         <li>
           <a href="/api/docs/interface/servicesinterface/" class="sidebar-link">
             ServicesInterface
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/api/docs/interface/taxonomizableinterface/" class="sidebar-link">
+            TaxonomizableInterface
           </a>
         </li>
       

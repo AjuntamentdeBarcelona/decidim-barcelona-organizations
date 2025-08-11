@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim_initiatives (originally 20191106144259)
 
+# This migration comes from decidim_initiatives (originally 20191106144259)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-08-11 12:26:29 UTC
 class AddSettingsToInitiativesTypes < ActiveRecord::Migration[5.2]
   def change
     add_column :decidim_initiatives_types, :child_scope_threshold_enabled, :boolean, null: false, default: false

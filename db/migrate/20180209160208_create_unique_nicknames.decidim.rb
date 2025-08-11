@@ -1,6 +1,7 @@
-# This migration comes from decidim (originally 20171212103803)
 # frozen_string_literal: true
 
+# This migration comes from decidim (originally 20171212103803)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-08-11 12:26:28 UTC
 class CreateUniqueNicknames < ActiveRecord::Migration[5.1]
   class User < ApplicationRecord
     include Decidim::Nicknamizable
@@ -12,7 +13,7 @@ class CreateUniqueNicknames < ActiveRecord::Migration[5.1]
     add_column :decidim_users, :nickname, :string, limit: 20
 
     User.where.not(name: nil).find_each do |user|
-      user.update!(nickname: User.nicknamize(user.name))
+      user.update!(nickname: UserBaseEntity.nicknamize(user.name, user.decidim_organization_id))
     end
 
     add_index :decidim_users,
