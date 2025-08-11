@@ -11,7 +11,7 @@ checksums = [
     files: {
       "/app/helpers/decidim/conferences/conference_helper.rb" => "94f59c0b9fdf194c3108d401dd1afbbd",
       "/app/views/decidim/conferences/conferences/_conference_hero.html.erb" => "da4e86d29cf4272356d4bed6130d641f",
-      "/app/views/decidim/conferences/conferences/show.html.erb" => "f473d522ddc4c5f3352f3fc55cffdd7d"
+      "/app/views/decidim/conferences/conferences/show.html.erb" => "441608dc88131043a6fcaca81edc18d1"
     }
   }
 ]

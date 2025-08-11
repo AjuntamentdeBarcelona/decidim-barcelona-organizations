@@ -48,7 +48,7 @@ jobs:
         run: |
           npm install
           bundle exec rake assets:precompile
-      - run: bundle exec rspec --exclude-pattern "spec/system/decidim_awesome/*"
+      - run: bundle exec rspec --exclude-pattern "spec/system/awesome*"
         name: Run specs
       - uses: actions/upload-artifact@v4
         if: always()
