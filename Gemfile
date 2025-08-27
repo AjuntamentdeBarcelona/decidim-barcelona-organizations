@@ -43,6 +43,7 @@ group :development do
   gem "capistrano", "~> 3.19"
   gem "capistrano3-puma", "~> 6.0"
   gem "capistrano-bundler", "~> 2.1"
+  gem "capistrano-nvm"
   gem "capistrano-rails", "~> 1.7"
   gem "capistrano-rails-console", "~> 2.3"
   gem "capistrano-rbenv", "~> 2.2"
