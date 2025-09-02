@@ -33,6 +33,11 @@ group :development, :test do
 
   gem "decidim-dev", DECIDIM_VERSION
   gem "rspec-rails"
+
+  gem "debug"
+  gem "ruby-lsp", require: false
+  gem "ruby-lsp-rails", require: false
+  gem "ruby-lsp-rspec", require: false
 end
 
 group :development do

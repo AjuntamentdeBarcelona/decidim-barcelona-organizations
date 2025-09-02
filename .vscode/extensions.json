@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "redhat.vscode-yaml",
+    "shopify.ruby-lsp",
+    "streetsidesoftware.code-spell-checker",
+    "stylelint.vscode-stylelint",
+  ]
+}

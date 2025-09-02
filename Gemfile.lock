@@ -203,6 +203,9 @@ GEM
     date_validator (0.12.0)
       activemodel (>= 3)
       activesupport (>= 3)
+    debug (1.11.0)
+      irb (~> 1.10)
+      reline (>= 0.3.8)
     decidim (0.29.4)
       decidim-accountability (= 0.29.4)
       decidim-admin (= 0.29.4)
@@ -422,6 +425,7 @@ GEM
     doorkeeper (5.8.2)
       railties (>= 5)
     doorkeeper-i18n (4.0.1)
+    erb (5.0.2)
     erb_lint (0.4.0)
       activesupport
       better_html (>= 2.0.1)
@@ -542,6 +546,10 @@ GEM
     invisible_captcha (0.13.0)
       rails (>= 3.2.0)
     io-console (0.8.1)
+    irb (1.15.2)
+      pp (>= 0.6.0)
+      rdoc (>= 4.0.0)
+      reline (>= 0.4.2)
     jmespath (1.6.2)
     json (2.12.2)
     jwt (3.1.2)
@@ -696,6 +704,8 @@ GEM
       moneta (~> 1.0.0)
       rate_throttle_client (~> 0.1.0)
     polyglot (0.3.5)
+    pp (0.6.2)
+      prettyprint
     premailer (1.27.0)
       addressable
       css_parser (>= 1.19.0)
@@ -704,6 +714,7 @@ GEM
       actionmailer (>= 3)
       net-smtp
       premailer (~> 1.7, >= 1.7.9)
+    prettyprint (0.2.0)
     prism (1.4.0)
     psych (4.0.6)
       stringio
@@ -771,6 +782,11 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
+    rbs (3.9.4)
+      logger
+    rdoc (6.14.2)
+      erb
+      psych (>= 4.0.0)
     redcarpet (3.6.1)
     redis (4.8.1)
     regexp_parser (2.10.0)
@@ -849,6 +865,14 @@ GEM
       rubocop-rspec (~> 3, >= 3.0.1)
     rubocop-rubycw (0.1.6)
       rubocop (~> 1.0)
+    ruby-lsp (0.26.1)
+      language_server-protocol (~> 3.17.0)
+      prism (>= 1.2, < 2.0)
+      rbs (>= 3, < 5)
+    ruby-lsp-rails (0.4.8)
+      ruby-lsp (>= 0.26.0, < 0.27.0)
+    ruby-lsp-rspec (0.1.27)
+      ruby-lsp (~> 0.26.0)
     ruby-progressbar (1.13.0)
     ruby-vips (2.2.4)
       ffi (~> 1.12)
@@ -983,6 +1007,7 @@ DEPENDENCIES
   capistrano-sidekiq (~> 3.0)
   capistrano3-puma (~> 6.0)
   dalli
+  debug
   decidim (~> 0.29.0)
   decidim-conferences (~> 0.29.0)
   decidim-decidim_awesome (~> 0.12.0)
@@ -1003,6 +1028,9 @@ DEPENDENCIES
   rails_autoscale_agent
   rspec-rails
   rubocop-faker
+  ruby-lsp
+  ruby-lsp-rails
+  ruby-lsp-rspec
   sendgrid-ruby
   sentry-raven
   sidekiq
