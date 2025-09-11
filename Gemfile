@@ -4,17 +4,16 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/0.27-stable" }.freeze
+DECIDIM_VERSION = "~> 0.29.0"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
-gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-templates", DECIDIM_VERSION
 
-gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "main"
-gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications", branch: "main"
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "master"
+gem "decidim-decidim_awesome", "~> 0.12.0"
+gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications", branch: "release/0.29-stable"
+gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "release/0.29-stable"
 
 gem "puma", ">= 5.0.0"
 gem "uglifier"
@@ -24,29 +23,32 @@ gem "wkhtmltopdf-binary"
 gem "rails-observers"
 gem "webrick"
 
-gem "faker", "~> 2.14.0"
+gem "faker"
 gem "sidekiq"
-
-gem "doorkeeper", "< 5.6"
 
 group :development, :test do
   gem "byebug", platform: :mri
+  gem "mdl"
   gem "rubocop-faker"
 
   gem "decidim-dev", DECIDIM_VERSION
-  gem "rspec-rails", "~> 4.0"
+  gem "rspec-rails"
+
+  gem "debug"
+  gem "ruby-lsp", require: false
+  gem "ruby-lsp-rails", require: false
+  gem "ruby-lsp-rspec", require: false
 end
 
 group :development do
   gem "letter_opener_web", "~> 2.0.0"
   gem "listen", "~> 3.1"
-  gem "spring", "~> 2.0"
-  gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", "~> 4.2"
 
   gem "capistrano", "~> 3.19"
   gem "capistrano3-puma", "~> 6.0"
   gem "capistrano-bundler", "~> 2.1"
+  gem "capistrano-nvm"
   gem "capistrano-rails", "~> 1.7"
   gem "capistrano-rails-console", "~> 2.3"
   gem "capistrano-rbenv", "~> 2.2"

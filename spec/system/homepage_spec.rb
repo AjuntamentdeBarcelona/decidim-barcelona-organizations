@@ -2,9 +2,9 @@
 
 require "rails_helper"
 
-describe "Visit the home page", type: :system, perform_enqueued: true do
-  let(:organization) { create :organization }
-  let!(:content_block) { create :content_block, organization: organization, manifest_name: :hero }
+describe "Visit the home page", :perform_enqueued do
+  let(:organization) { create(:organization) }
+  let!(:content_block) { create(:content_block, organization:, manifest_name: :hero) }
 
   before do
     switch_to_host(organization.host)

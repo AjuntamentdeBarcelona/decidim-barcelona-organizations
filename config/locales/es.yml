@@ -36,3 +36,8 @@ es:
       direct_verifications_grup9:
         name: Grupo 9
         explanation: Verificación directa para el censo de Grupo 9
+    verifications:
+      document_types:
+        dni: DNI
+        nie: NIE
+        passport: Pasaporte
