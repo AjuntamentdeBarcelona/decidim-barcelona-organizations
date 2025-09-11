@@ -9,8 +9,8 @@ GIT
 
 GIT
   remote: https://github.com/Platoniq/decidim-verifications-direct_verifications
-  revision: f6170dc4f13d01026de4daaae9f42600c5f7ccc9
-  branch: deps/decidim-0.30
+  revision: e751ecf3e2716c940d05b9b214a03648e9876579
+  branch: main
   specs:
     decidim-direct_verifications (1.6.0)
       decidim-admin (>= 0.30.0, < 0.31)
