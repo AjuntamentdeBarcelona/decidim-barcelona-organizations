@@ -17,6 +17,18 @@ GIT
       decidim-core (>= 0.30.0, < 0.31)
       deface (~> 1.5)
 
+GIT
+  remote: https://github.com/decidim-ice/decidim-module-decidim_awesome
+  revision: ba954a777d0d8a30930d006cd92606df13f10728
+  branch: main
+  specs:
+    decidim-decidim_awesome (0.13.0)
+      active_hashcash (~> 0.4.0)
+      decidim-admin (>= 0.30.0, < 0.31)
+      decidim-core (>= 0.30.0, < 0.31)
+      deface (>= 1.5)
+      sassc (~> 2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -65,6 +77,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_hashcash (0.4.0)
+      rails (>= 5.2.0)
     active_link_to (1.0.5)
       actionpack
       addressable
@@ -201,6 +215,9 @@ GEM
     date_validator (0.12.0)
       activemodel (>= 3)
       activesupport (>= 3)
+    debug (1.11.0)
+      irb (~> 1.10)
+      reline (>= 0.3.8)
     decidim (0.30.1)
       decidim-accountability (= 0.30.1)
       decidim-admin (= 0.30.1)
@@ -418,6 +435,7 @@ GEM
     doorkeeper (5.8.2)
       railties (>= 5)
     doorkeeper-i18n (4.0.1)
+    erb (5.0.2)
     erb_lint (0.8.0)
       activesupport
       better_html (>= 2.0.1)
@@ -718,6 +736,9 @@ GEM
       premailer (~> 1.7, >= 1.7.9)
     prettyprint (0.2.0)
     prism (1.4.0)
+    psych (5.2.6)
+      date
+      stringio
     public_suffix (6.0.2)
     puma (6.6.0)
       nio4r (~> 2.0)
@@ -887,6 +908,8 @@ GEM
       google-protobuf (~> 4.31)
     sass-embedded (1.90.0-x86_64-linux-gnu)
       google-protobuf (~> 4.31)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     selenium-webdriver (4.34.0)
       base64 (~> 0.2)
       logger (~> 1.4)
@@ -933,6 +956,7 @@ GEM
       ostruct
     sshkit-interactive (0.3.0)
       sshkit (~> 1.12)
+    stringio (3.1.7)
     strscan (3.1.5)
     temple (0.10.4)
     terminal-table (4.0.0)
@@ -1010,8 +1034,10 @@ DEPENDENCIES
   capistrano-sidekiq (~> 3.0)
   capistrano3-puma (~> 6.0)
   dalli
+  debug
   decidim (~> 0.30.1)
   decidim-conferences (~> 0.30.1)
+  decidim-decidim_awesome!
   decidim-dev (~> 0.30.1)
   decidim-direct_verifications!
   decidim-initiatives (~> 0.30.1)
