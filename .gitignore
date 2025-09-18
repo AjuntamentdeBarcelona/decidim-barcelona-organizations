@@ -41,7 +41,7 @@ public/sw.js.map.gz
 .rubocop-http*
 
 /Capfile
-config/deploy/*
+config/deploy*
 config/deploy.rb
 
 tailwind.config.js

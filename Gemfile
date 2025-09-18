@@ -11,8 +11,8 @@ gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-templates", DECIDIM_VERSION
 
-# gem "decidim-decidim_awesome", "~> 0.12.0"
-gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications", branch: "deps/decidim-0.30"
+gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "main"
+gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications", branch: "main"
 gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "main"
 
 gem "puma", ">= 5.0.0"
@@ -33,6 +33,11 @@ group :development, :test do
 
   gem "decidim-dev", DECIDIM_VERSION
   gem "rspec-rails"
+
+  gem "debug"
+  gem "ruby-lsp", require: false
+  gem "ruby-lsp-rails", require: false
+  gem "ruby-lsp-rspec", require: false
 end
 
 group :development do
@@ -43,6 +48,7 @@ group :development do
   gem "capistrano", "~> 3.19"
   gem "capistrano3-puma", "~> 6.0"
   gem "capistrano-bundler", "~> 2.1"
+  gem "capistrano-nvm"
   gem "capistrano-rails", "~> 1.7"
   gem "capistrano-rails-console", "~> 2.3"
   gem "capistrano-rbenv", "~> 2.2"
