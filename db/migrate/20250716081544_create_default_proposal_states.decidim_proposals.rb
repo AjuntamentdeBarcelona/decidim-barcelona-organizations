@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # This migration comes from decidim_proposals (originally 20240110203504)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-08-11 12:26:29 UTC
 class CreateDefaultProposalStates < ActiveRecord::Migration[6.1]
   class CustomProposal < ApplicationRecord
     belongs_to :proposal_state,
@@ -17,7 +18,7 @@ class CreateDefaultProposalStates < ActiveRecord::Migration[6.1]
   def up
     CustomProposal.reset_column_information
     Decidim::Proposals::ProposalState.reset_column_information
-    Decidim::Component.where(manifest_name: "proposals").find_each do |component|
+    Decidim::Component.unscoped.where(manifest_name: "proposals").find_each do |component|
       admin_user = component.organization.admins.first
       default_states = Decidim::Proposals.create_default_states!(component, admin_user)
 

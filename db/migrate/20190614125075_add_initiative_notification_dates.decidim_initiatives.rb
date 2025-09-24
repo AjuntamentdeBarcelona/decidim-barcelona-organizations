@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim_initiatives (originally 20171019103358)
 
+# This migration comes from decidim_initiatives (originally 20171019103358)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-08-11 12:26:28 UTC
 class AddInitiativeNotificationDates < ActiveRecord::Migration[5.1]
   def change
     add_column :decidim_initiatives,
