@@ -26,6 +26,8 @@ gem "webrick"
 gem "faker"
 gem "sidekiq"
 
+gem "dotenv-rails"
+
 group :development, :test do
   gem "byebug", platform: :mri
   gem "mdl"
