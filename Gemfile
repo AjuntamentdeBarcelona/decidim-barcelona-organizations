@@ -26,6 +26,8 @@ gem "webrick"
 gem "faker"
 gem "sidekiq"
 
+gem "dotenv-rails"
+
 group :development, :test do
   gem "byebug", platform: :mri
   gem "mdl"
@@ -56,6 +58,7 @@ group :development do
 end
 
 group :production do
+  gem "appsignal"
   gem "aws-sdk-s3", require: false
   gem "dalli"
   gem "fog-aws"
