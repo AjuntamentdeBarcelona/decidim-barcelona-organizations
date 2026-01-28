@@ -16,6 +16,8 @@ if Rails.application.secrets.dig(:omniauth, :keycloakopenid).present?
       strategy.options[:client_options] ||= {}
       strategy.options[:client_options][:site] = provider_config[:site]
       strategy.options[:client_options][:realm] = provider_config[:realm]
+      strategy.options[:client_options][:base_url] = ""
+      strategy.options[:pkce] = true
     end
   end
 
