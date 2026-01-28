@@ -15,7 +15,7 @@ gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-modu
 gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications", branch: "main"
 gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "main"
 
-gem 'omniauth-keycloak'
+gem "omniauth-keycloak"
 
 gem "puma", ">= 5.0.0"
 gem "uglifier"
