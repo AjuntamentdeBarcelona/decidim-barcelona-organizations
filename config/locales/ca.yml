@@ -1,5 +1,13 @@
 ca:
   decidim:
+    system:
+      organizations:
+        omniauth_settings:
+          keycloakopenid:
+            client_id: ID del client
+            client_secret: Secret del client
+            site: URL del servidor Keycloak
+            realm: Realm
     proposals:
       proposals:
         voting_rules:
