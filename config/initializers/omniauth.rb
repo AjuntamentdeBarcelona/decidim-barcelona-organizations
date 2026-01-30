@@ -25,7 +25,7 @@ if Rails.application.secrets.dig(:omniauth, :keycloakopenid).present?
     info do
       {
         nickname: raw_info["preferred_username"],
-        name: [raw_info["given_name"], raw_info["family_name"]].compact.join(" "),
+        name: raw_info["name"],
         email: raw_info["email"]
       }
     end
