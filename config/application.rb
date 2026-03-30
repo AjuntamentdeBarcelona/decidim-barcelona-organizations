@@ -15,7 +15,7 @@ Bundler.require(*Rails.groups)
 module DecidimBarcelonaOrganizations
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
+    config.load_defaults 7.2
 
     config.active_record.observers = :organization_observer
 

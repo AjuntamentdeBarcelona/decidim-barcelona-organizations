@@ -4,6 +4,12 @@
 <h2>
 <a id="return-fields" class="anchor" href="#return-fields" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Return fields</h2>
 <div class="field-entry ">
+  <span id="attachmentsenabled" class="field-name anchored">attachmentsEnabled (<code><a href="/api/docs/scalar/boolean">Boolean</a></code>)</span>
+  <div class="description-wrapper">
+   <p>Enable attachments on initiative types</p>
+  </div>
+</div>
+<div class="field-entry ">
   <span id="bannerimage" class="field-name anchored">bannerImage (<code><a href="/api/docs/scalar/string">String</a></code>)</span>
   <div class="description-wrapper">
    <p>Banner image</p>
@@ -13,6 +19,18 @@
   <span id="collectuserextrafields" class="field-name anchored">collectUserExtraFields (<code><a href="/api/docs/scalar/boolean">Boolean</a></code>)</span>
   <div class="description-wrapper">
    <p>Collect participant personal data on signature</p>
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="commentsenabled" class="field-name anchored">commentsEnabled (<code><a href="/api/docs/scalar/boolean">Boolean</a></code>)</span>
+  <div class="description-wrapper">
+   <p>Enable comments on initiative types</p>
+  </div>
+</div>
+<div class="field-entry ">
+  <span id="customsignatureenddateenabled" class="field-name anchored">customSignatureEndDateEnabled (<code><a href="/api/docs/scalar/boolean">Boolean</a></code>)</span>
+  <div class="description-wrapper">
+   <p>Enable participants to set custom signature end date</p>
   </div>
 </div>
 <div class="field-entry ">
@@ -128,20 +146,6 @@
       
       
       <li>
-        <a href="/api/docs/query/assembliestype/" class="sidebar-link">
-          assembliesType
-        </a>
-      </li>
-      
-      
-      <li>
-        <a href="/api/docs/query/assembliestypes/" class="sidebar-link">
-          assembliesTypes
-        </a>
-      </li>
-      
-      
-      <li>
         <a href="/api/docs/query/assembly/" class="sidebar-link">
           assembly
         </a>
@@ -184,13 +188,6 @@
       
       
       <li>
-        <a href="/api/docs/query/hashtags/" class="sidebar-link">
-          hashtags
-        </a>
-      </li>
-      
-      
-      <li>
         <a href="/api/docs/query/initiative/" class="sidebar-link">
           initiative
         </a>
@@ -214,13 +211,6 @@
       <li>
         <a href="/api/docs/query/initiativestypes/" class="sidebar-link">
           initiativesTypes
-        </a>
-      </li>
-      
-      
-      <li>
-        <a href="/api/docs/query/metrics/" class="sidebar-link">
-          metrics
         </a>
       </li>
       
@@ -315,6 +305,13 @@
         </a>
       </li>
       
+      
+      <li>
+        <a href="/api/docs/mutation/component/" class="sidebar-link">
+          component
+        </a>
+      </li>
+      
     </ul>
   </li>
 
@@ -338,34 +335,6 @@
       
         
       <li>
-        <a href="/api/docs/object/answeroption/" class="sidebar-link">
-          AnswerOption
-        </a>
-      </li>
-      
-        
-      <li>
-        <a href="/api/docs/object/area/" class="sidebar-link">
-          Area
-        </a>
-      </li>
-      
-        
-      <li>
-        <a href="/api/docs/object/areatype/" class="sidebar-link">
-          AreaType
-        </a>
-      </li>
-      
-        
-      <li>
-        <a href="/api/docs/object/assembliestype/" class="sidebar-link">
-          AssembliesType
-        </a>
-      </li>
-      
-        
-      <li>
         <a href="/api/docs/object/assembly/" class="sidebar-link">
           Assembly
         </a>
@@ -375,6 +344,13 @@
       <li>
         <a href="/api/docs/object/attachment/" class="sidebar-link">
           Attachment
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/attachmentcollection/" class="sidebar-link">
+          AttachmentCollection
         </a>
       </li>
       
@@ -443,6 +419,13 @@
       
         
       <li>
+        <a href="/api/docs/object/component/" class="sidebar-link">
+          Component
+        </a>
+      </li>
+      
+        
+      <li>
         <a href="/api/docs/object/conference/" class="sidebar-link">
           Conference
         </a>
@@ -459,6 +442,13 @@
       <li>
         <a href="/api/docs/object/conferencepartner/" class="sidebar-link">
           ConferencePartner
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/conferenceregistrationtype/" class="sidebar-link">
+          ConferenceRegistrationType
         </a>
       </li>
       
@@ -513,15 +503,15 @@
       
         
       <li>
-        <a href="/api/docs/object/fingerprint/" class="sidebar-link">
-          Fingerprint
+        <a href="/api/docs/object/dummyresource/" class="sidebar-link">
+          DummyResource
         </a>
       </li>
       
         
       <li>
-        <a href="/api/docs/object/hashtagtype/" class="sidebar-link">
-          HashtagType
+        <a href="/api/docs/object/fingerprint/" class="sidebar-link">
+          Fingerprint
         </a>
       </li>
       
@@ -543,6 +533,13 @@
       <li>
         <a href="/api/docs/object/initiativetype/" class="sidebar-link">
           InitiativeType
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/localizedcustomfields/" class="sidebar-link">
+          LocalizedCustomFields
         </a>
       </li>
       
@@ -604,15 +601,8 @@
       
         
       <li>
-        <a href="/api/docs/object/metric/" class="sidebar-link">
-          Metric
-        </a>
-      </li>
-      
-        
-      <li>
-        <a href="/api/docs/object/metrichistory/" class="sidebar-link">
-          MetricHistory
+        <a href="/api/docs/object/milestone/" class="sidebar-link">
+          Milestone
         </a>
       </li>
       
@@ -758,8 +748,29 @@
       
         
       <li>
+        <a href="/api/docs/object/proposalmutation/" class="sidebar-link">
+          ProposalMutation
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/proposalstate/" class="sidebar-link">
+          ProposalState
+        </a>
+      </li>
+      
+        
+      <li>
         <a href="/api/docs/object/proposals/" class="sidebar-link">
           Proposals
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/proposalsmutation/" class="sidebar-link">
+          ProposalsMutation
         </a>
       </li>
       
@@ -779,8 +790,22 @@
       
         
       <li>
+        <a href="/api/docs/object/questionmatrixrow/" class="sidebar-link">
+          QuestionMatrixRow
+        </a>
+      </li>
+      
+        
+      <li>
         <a href="/api/docs/object/questionnaire/" class="sidebar-link">
           Questionnaire
+        </a>
+      </li>
+      
+        
+      <li>
+        <a href="/api/docs/object/responseoption/" class="sidebar-link">
+          ResponseOption
         </a>
       </li>
       
@@ -898,15 +923,15 @@
       
         
       <li>
-        <a href="/api/docs/object/timelineentry/" class="sidebar-link">
-          TimelineEntry
+        <a href="/api/docs/object/traceversion/" class="sidebar-link">
+          TraceVersion
         </a>
       </li>
       
         
       <li>
-        <a href="/api/docs/object/traceversion/" class="sidebar-link">
-          TraceVersion
+        <a href="/api/docs/object/translatedcustomfields/" class="sidebar-link">
+          TranslatedCustomFields
         </a>
       </li>
       
@@ -921,13 +946,6 @@
       <li>
         <a href="/api/docs/object/user/" class="sidebar-link">
           User
-        </a>
-      </li>
-      
-        
-      <li>
-        <a href="/api/docs/object/usergroup/" class="sidebar-link">
-          UserGroup
         </a>
       </li>
       
@@ -996,6 +1014,13 @@
       
         
         <li>
+          <a href="/api/docs/interface/attachablecollectioninterface/" class="sidebar-link">
+            AttachableCollectionInterface
+          </a>
+        </li>
+      
+        
+        <li>
           <a href="/api/docs/interface/attachableinterface/" class="sidebar-link">
             AttachableInterface
           </a>
@@ -1045,13 +1070,6 @@
       
         
         <li>
-          <a href="/api/docs/interface/endorsableinterface/" class="sidebar-link">
-            EndorsableInterface
-          </a>
-        </li>
-      
-        
-        <li>
           <a href="/api/docs/interface/fingerprintinterface/" class="sidebar-link">
             FingerprintInterface
           </a>
@@ -1059,8 +1077,29 @@
       
         
         <li>
+          <a href="/api/docs/interface/followableinterface/" class="sidebar-link">
+            FollowableInterface
+          </a>
+        </li>
+      
+        
+        <li>
           <a href="/api/docs/interface/initiativetypeinterface/" class="sidebar-link">
             InitiativeTypeInterface
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/api/docs/interface/likeableinterface/" class="sidebar-link">
+            LikeableInterface
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/api/docs/interface/localizableinterface/" class="sidebar-link">
+            LocalizableInterface
           </a>
         </li>
       
@@ -1089,6 +1128,13 @@
         <li>
           <a href="/api/docs/interface/questionnaireentityinterface/" class="sidebar-link">
             QuestionnaireEntityInterface
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="/api/docs/interface/referableinterface/" class="sidebar-link">
+            ReferableInterface
           </a>
         </li>
       
@@ -1155,12 +1201,26 @@
     <p><a href="/api/docs/union">Unions</a></p>
     <ul class="menu-root">
       
+      
+      <li>
+        <a href="/api/docs/union/componentmutation/" class="sidebar-link">
+          ComponentMutation
+        </a>
+      </li>
+      
     </ul>
   </li>
 
   <li>
     <p><a href="/api/docs/input_object">Input Objects</a></p>
     <ul class="menu-root">
+      
+      
+      <li>
+        <a href="/api/docs/input_object/answerinput/" class="sidebar-link">
+          AnswerInput
+        </a>
+      </li>
       
       
       <li>
@@ -1208,6 +1268,13 @@
       <li>
         <a href="/api/docs/input_object/postsort/" class="sidebar-link">
           PostSort
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="/api/docs/input_object/proposalattributes/" class="sidebar-link">
+          ProposalAttributes
         </a>
       </li>
       

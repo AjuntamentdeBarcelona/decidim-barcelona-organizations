@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
+ActiveRecord::Schema[7.2].define(version: 2026_03_26_143094) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
-  enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
@@ -116,7 +115,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
 
   create_table "decidim_action_logs", force: :cascade do |t|
     t.bigint "decidim_organization_id", null: false
-    t.bigint "decidim_user_id", null: false
+    t.bigint "user_id", null: false
     t.bigint "decidim_component_id"
     t.string "resource_type", null: false
     t.bigint "resource_id", null: false
@@ -130,14 +129,16 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
     t.string "visibility", default: "admin-only"
     t.integer "decidim_scope_id"
     t.integer "decidim_area_id"
+    t.string "user_type", default: "Decidim::User", null: false
     t.index ["created_at"], name: "index_decidim_action_logs_on_created_at"
     t.index ["decidim_area_id"], name: "index_decidim_action_logs_on_decidim_area_id"
     t.index ["decidim_component_id"], name: "index_action_logs_on_component_id"
     t.index ["decidim_organization_id"], name: "index_action_logs_on_organization_id"
     t.index ["decidim_scope_id"], name: "index_decidim_action_logs_on_decidim_scope_id"
-    t.index ["decidim_user_id"], name: "index_action_logs_on_user_id"
     t.index ["participatory_space_type", "participatory_space_id"], name: "index_action_logs_on_space_type_and_id"
     t.index ["resource_type", "resource_id"], name: "index_action_logs_on_resource_type_and_id"
+    t.index ["user_id", "user_type"], name: "index_decidim_action_log_on_users"
+    t.index ["user_id"], name: "index_action_logs_on_user_id"
     t.index ["version_id"], name: "index_decidim_action_logs_on_version_id"
     t.index ["visibility"], name: "index_decidim_action_logs_on_visibility"
   end
@@ -155,6 +156,12 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
     t.index ["decidim_emendation_id"], name: "index_decidim_amendments_on_decidim_emendation_id"
     t.index ["decidim_user_id", "decidim_amendable_id", "decidim_amendable_type"], name: "index_on_amender_and_amendable"
     t.index ["decidim_user_id"], name: "index_decidim_amendments_on_decidim_user_id"
+  end
+
+  create_table "decidim_api_jwt_denylists", force: :cascade do |t|
+    t.string "jti", null: false
+    t.datetime "exp", null: false
+    t.index ["jti"], name: "index_decidim_api_jwt_denylists_on_jti"
   end
 
   create_table "decidim_area_types", force: :cascade do |t|
@@ -406,7 +413,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
     t.index ["deleted_at"], name: "index_decidim_blogs_posts_on_deleted_at"
   end
 
-  create_table "decidim_budgets_budgets", id: :serial, force: :cascade do |t|
+  create_table "decidim_budgets_budgets", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "title"
     t.integer "weight", default: 0, null: false
     t.jsonb "description"
@@ -872,20 +879,6 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
     t.index ["decidim_organization_id"], name: "decidim_editor_images_constraint_organization"
   end
 
-  create_table "decidim_endorsements", force: :cascade do |t|
-    t.string "resource_type"
-    t.bigint "resource_id"
-    t.string "decidim_author_type"
-    t.bigint "decidim_author_id"
-    t.integer "decidim_user_group_id", default: 0
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["decidim_author_type", "decidim_author_id"], name: "idx_endorsements_authors"
-    t.index ["decidim_user_group_id"], name: "index_decidim_endorsements_on_decidim_user_group_id"
-    t.index ["resource_type", "resource_id", "decidim_author_type", "decidim_author_id", "decidim_user_group_id"], name: "idx_endorsements_rsrcs_and_authors", unique: true
-    t.index ["resource_type", "resource_id"], name: "index_decidim_endorsements_on_resource_type_and_resource_id"
-  end
-
   create_table "decidim_follows", force: :cascade do |t|
     t.bigint "decidim_user_id", null: false
     t.string "decidim_followable_type"
@@ -1130,6 +1123,20 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
     t.index ["decidim_author_id"], name: "index_decidim_initiatives_votes_on_decidim_author_id"
     t.index ["decidim_initiative_id"], name: "index_decidim_initiatives_votes_on_decidim_initiative_id"
     t.index ["hash_id"], name: "index_decidim_initiatives_votes_on_hash_id"
+  end
+
+  create_table "decidim_likes", force: :cascade do |t|
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.string "decidim_author_type"
+    t.bigint "decidim_author_id"
+    t.integer "decidim_user_group_id", default: 0
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.index ["decidim_author_type", "decidim_author_id"], name: "idx_likes_authors"
+    t.index ["decidim_user_group_id"], name: "index_decidim_likes_on_decidim_user_group_id"
+    t.index ["resource_type", "resource_id", "decidim_author_type", "decidim_author_id", "decidim_user_group_id"], name: "idx_likes_rsrcs_and_authors", unique: true
+    t.index ["resource_type", "resource_id"], name: "index_decidim_likes_on_resource_type_and_resource_id"
   end
 
   create_table "decidim_meetings_agenda_items", force: :cascade do |t|
@@ -1432,8 +1439,6 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
     t.string "secondary_hosts", default: [], array: true
     t.string "available_authorizations", default: [], array: true
     t.text "header_snippets"
-    t.jsonb "cta_button_text"
-    t.string "cta_button_path"
     t.boolean "enable_omnipresent_banner", default: false, null: false
     t.jsonb "omnipresent_banner_title"
     t.jsonb "omnipresent_banner_short_description"
@@ -1469,6 +1474,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
     t.boolean "enable_participatory_space_filters", default: true
     t.jsonb "content_security_policy", default: {}
     t.jsonb "name", default: {}, null: false
+    t.jsonb "short_name", default: {}, null: false
     t.index ["host"], name: "index_decidim_organizations_on_host", unique: true
   end
 
@@ -1602,6 +1608,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
     t.datetime "updated_at", precision: nil, null: false
     t.jsonb "role"
     t.boolean "published", default: false
+    t.index ["decidim_user_id", "privatable_to_type", "privatable_to_id"], name: "space_privatable_to_privatable_id_with_user"
     t.index ["decidim_user_id"], name: "index_decidim_spaces_users_on_private_user_id"
     t.index ["privatable_to_type", "privatable_to_id"], name: "space_privatable_to_privatable_id"
   end
@@ -2164,6 +2171,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
     t.datetime "password_updated_at", precision: nil
     t.string "previous_passwords", default: [], array: true
     t.boolean "email_on_assigned_proposals", default: true
+    t.string "api_key"
     t.index ["confirmation_token"], name: "index_decidim_users_on_confirmation_token", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_users_on_decidim_organization_id"
     t.index ["email", "decidim_organization_id"], name: "index_decidim_users_on_email_and_decidim_organization_id", unique: true, where: "((deleted_at IS NULL) AND (managed = false) AND ((type)::text = 'Decidim::User'::text))"
@@ -2208,6 +2216,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_27_140826) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "revoked_at", precision: nil
     t.string "scopes"
+    t.string "code_challenge"
+    t.string "code_challenge_method"
     t.index ["application_id"], name: "index_oauth_access_grants_on_application_id"
     t.index ["resource_owner_id"], name: "index_oauth_access_grants_on_resource_owner_id"
     t.index ["token"], name: "index_oauth_access_grants_on_token", unique: true

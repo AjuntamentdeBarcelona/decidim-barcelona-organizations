@@ -3,5 +3,5 @@
 require "platform-api"
 
 # rubocop:disable Style/GlobalVars
-$heroku = PlatformAPI.connect_oauth(Rails.application.secrets.heroku_oauth_token)
+$heroku = PlatformAPI.connect_oauth(ENV.fetch("HEROKU_OAUTH_TOKEN", nil))
 # rubocop:enable Style/GlobalVars
