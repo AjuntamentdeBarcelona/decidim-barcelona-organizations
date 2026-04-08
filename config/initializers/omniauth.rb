@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-if Rails.application.secrets.dig(:omniauth, :keycloakopenid).present?
+if ENV["OMNIAUTH_KEYCLOAKOPENID"].present?
 
   def setup_keycloak_provider_proc
     lambda do |env|

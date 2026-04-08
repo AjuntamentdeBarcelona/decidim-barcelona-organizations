@@ -2,10 +2,10 @@
   "name": "app",
   "private": true,
   "dependencies": {
-    "@decidim/browserslist-config": "^0.30.1",
-    "@decidim/core": "^0.30.1",
+    "@decidim/browserslist-config": "^0.31.3",
+    "@decidim/core": "^0.31.3",
     "@decidim/elections": "^0.28.6",
-    "@decidim/webpacker": "^0.30.1",
+    "@decidim/webpacker": "^0.31.3",
     "@rails/actioncable": "^6.1.710",
     "codemirror": "^5.65.19",
     "europa": "^4.0.0",
@@ -54,15 +54,16 @@
     "@babel/plugin-transform-runtime": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
-    "@decidim/dev": "^0.30.1",
-    "@decidim/eslint-config": "^0.30.1",
-    "@decidim/prettier-config": "^0.30.1",
-    "@decidim/stylelint-config": "^0.30.1",
+    "@decidim/dev": "^0.31.3",
+    "@decidim/eslint-config": "^0.31.3",
+    "@decidim/prettier-config": "^0.31.3",
+    "@decidim/stylelint-config": "^0.31.3",
     "@tarekraafat/autocomplete.js": "^10.2.7",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-standard": "^3.1.0",
     "postcss-scss": "^4.0.9",
-    "sass-embedded": "~1.57.1"
+    "sass-embedded": "~1.57.1",
+    "shakapacker": "^8.3.0"
   }
 }
