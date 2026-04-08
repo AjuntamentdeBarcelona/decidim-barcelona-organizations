@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 if ENV["OMNIAUTH_KEYCLOAKOPENID"].present?
+  Decidim.omniauth_providers = Decidim.omniauth_providers.merge(
+    keycloakopenid: {
+      enabled: false,
+      icon_path: "",
+      client_id: "",
+      client_secret: "",
+      site: "",
+      realm: ""
+    }
+  )
 
   def setup_keycloak_provider_proc
     lambda do |env|
