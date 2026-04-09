@@ -17,6 +17,8 @@ module DecidimBarcelonaOrganizations
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.2
 
+    config.active_support.use_authenticated_message_encryption = false
+
     config.active_record.observers = :organization_observer
 
     # Settings in config/environments/* take precedence over those specified here.
