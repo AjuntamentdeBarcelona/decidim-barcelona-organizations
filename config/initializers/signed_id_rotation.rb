@@ -9,11 +9,14 @@
 #
 # This keeps SHA256 for new signatures while accepting old SHA1 signatures.
 Rails.application.config.after_initialize do
+  verifier = ActiveStorage::Blob.signed_id_verifier rescue nil
+  next unless verifier
+
   old_key_generator = ActiveSupport::KeyGenerator.new(
     Rails.application.secret_key_base,
     hash_digest_class: OpenSSL::Digest::SHA1
   )
   old_secret = old_key_generator.generate_key("ActiveRecord/SignedId")
 
-  ActiveStorage::Blob.signed_id_verifier.rotate(old_secret)
+  verifier.rotate(old_secret)
 end
