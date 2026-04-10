@@ -9,7 +9,7 @@
 #
 # This keeps SHA256 for new signatures while accepting old SHA1 signatures.
 Rails.application.config.after_initialize do
-  next unless Rails.application.secret_key_base.present?
+  next if Rails.application.secret_key_base.blank?
 
   old_secret = ActiveSupport::KeyGenerator.new(
     Rails.application.secret_key_base,
