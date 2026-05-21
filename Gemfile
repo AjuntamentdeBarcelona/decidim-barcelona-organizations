@@ -4,9 +4,10 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "~> 0.31.2"
+DECIDIM_VERSION = "0.31.3"
 
 gem "decidim", DECIDIM_VERSION
+gem "decidim-collaborative_texts", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-elections", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
