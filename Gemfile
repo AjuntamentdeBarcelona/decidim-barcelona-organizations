@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.31.3"
+DECIDIM_VERSION = { git: "https://github.com/AjuntamentdeBarcelona/decidim", branch: "release/0.31.3-backports" }.freeze
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-collaborative_texts", DECIDIM_VERSION
