@@ -1015,8 +1015,6 @@ GEM
     semantic_range (3.1.1)
     sendgrid-ruby (6.7.0)
       ruby_http_client (~> 3.4)
-    sentry-raven (3.1.2)
-      faraday (>= 1.0)
     shakapacker (8.3.0)
       activesupport (>= 5.2)
       package_json
@@ -1169,7 +1167,6 @@ DEPENDENCIES
   ruby-lsp-rails
   ruby-lsp-rspec
   sendgrid-ruby
-  sentry-raven
   sidekiq
   uglifier
   web-console (~> 4.2)
