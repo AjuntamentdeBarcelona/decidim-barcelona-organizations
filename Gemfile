@@ -65,11 +65,7 @@ group :production do
   gem "appsignal"
   gem "aws-sdk-s3", require: false
   gem "dalli"
-  gem "fog-aws"
   gem "lograge"
   gem "platform-api"
-  gem "rails_autoscale_agent"
-  gem "sendgrid-ruby"
-  gem "sentry-raven"
   gem "whenever", require: false
 end
