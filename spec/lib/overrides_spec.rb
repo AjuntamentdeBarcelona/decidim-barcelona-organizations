@@ -7,6 +7,15 @@ require "rails_helper"
 # file should be updated to match any change/bug fix introduced in the core
 checksums = [
   {
+    # Overriden to keep inline SVG icons (`<svg><use>`) that core's sanitization
+    # strips, using the custom Decidim::SvgAdminInputScrubber. If no longer needed,
+    # also remove app/scrubbers/decidim/svg_admin_input_scrubber.rb and the cell spec.
+    package: "decidim-core",
+    files: {
+      "/app/cells/decidim/content_blocks/html_cell.rb" => "67df12cd1caefa3a8ddb7d340dcd057f"
+    }
+  },
+  {
     package: "decidim-conferences",
     files: {
       "/app/helpers/decidim/conferences/conference_helper.rb" => "9351b493c46fe95974293572ae1a534d",
