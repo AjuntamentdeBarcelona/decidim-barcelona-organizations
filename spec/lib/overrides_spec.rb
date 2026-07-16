@@ -25,6 +25,12 @@ checksums = [
       "/app/views/decidim/conferences/conferences/_conference_hero.html.erb" => "c49e3bfd348285ea3fcd6abcd00cf350",
       "/app/views/decidim/conferences/conferences/show.html.erb" => "d8244b43d93c792962b2114f6e488b09"
     }
+  },
+  {
+    package: "decidim-core",
+    files: {
+      "/app/views/decidim/application/_document.html.erb" => "0a72a1264dda68add5c4a439cc09f0d4"
+    }
   }
 ]
 
