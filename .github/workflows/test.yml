@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:14
+        image: postgres:16
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
@@ -41,7 +41,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - uses: nanasess/setup-chromedriver@v2
       - run: |
-          sudo apt update && sudo apt install p7zip wkhtmltopdf imagemagick
+          sudo apt update && sudo apt install p7zip wkhtmltopdf imagemagick libvips libvips-tools
       - run: bundle exec rake db:test:prepare
         name: Setup database
       - name: Precompile assets
