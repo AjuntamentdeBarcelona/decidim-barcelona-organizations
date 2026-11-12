@@ -21,7 +21,7 @@ checksums = [
   {
     package: "decidim-conferences",
     files: {
-      "/app/helpers/decidim/conferences/conference_helper.rb" => "9351b493c46fe95974293572ae1a534d",
+      "/app/helpers/decidim/conferences/conference_helper.rb" => "6499a016d726fcd5308bf0a3cccedfa5",
       "/app/views/decidim/conferences/conferences/_conference_hero.html.erb" => "c49e3bfd348285ea3fcd6abcd00cf350",
       "/app/views/decidim/conferences/conferences/show.html.erb" => "d8244b43d93c792962b2114f6e488b09"
     }
@@ -30,10 +30,10 @@ checksums = [
 
 describe "Overriden files", type: :view do
   checksums.each do |item|
-    spec = Gem::Specification.find_by_name(item[:package])
     item[:files].each do |file, signature|
-      it "#{spec.gem_dir}#{file} matches checksum" do
-        expect(md5("#{spec.gem_dir}#{file}")).to eq(signature)
+      it "#{item[:package]}#{file} matches checksum" do
+        gem_dir = Gem::Specification.find_by_name(item[:package]).gem_dir
+        expect(md5("#{gem_dir}#{file}")).to eq(signature)
       end
     end
   end
