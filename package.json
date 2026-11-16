@@ -2,9 +2,9 @@
   "name": "app",
   "private": true,
   "dependencies": {
-    "@decidim/browserslist-config": "file:packages/browserslist-config",
-    "@decidim/core": "file:packages/core",
-    "@decidim/webpacker": "file:packages/webpacker",
+    "@decidim/browserslist-config": "^0.32.2",
+    "@decidim/core": "^0.32.2",
+    "@decidim/webpacker": "^0.32.2",
     "@rails/actioncable": "^6.1.710",
     "codemirror": "^5.65.19",
     "europa": "^4.0.0",
@@ -53,16 +53,16 @@
     "@babel/plugin-transform-runtime": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
-    "@decidim/dev": "file:packages/dev",
-    "@decidim/eslint-config": "file:packages/eslint-config",
-    "@decidim/prettier-config": "file:packages/prettier-config",
-    "@decidim/stylelint-config": "file:packages/stylelint-config",
+    "@decidim/dev": "^0.32.2",
+    "@decidim/eslint-config": "^0.32.2",
+    "@decidim/prettier-config": "^0.32.2",
+    "@decidim/stylelint-config": "^0.32.2",
     "@tarekraafat/autocomplete.js": "^10.2.7",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-standard": "^3.1.0",
     "postcss-scss": "^4.0.9",
     "sass-embedded": "~1.57.1",
-    "shakapacker": "^8.3.0"
+    "shakapacker": "^9.7.0"
   }
 }
