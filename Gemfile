@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "~> 0.32.2"
+DECIDIM_VERSION = "~> 0.32.3"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-collaborative_texts", DECIDIM_VERSION
@@ -55,7 +55,7 @@ group :development do
   gem "web-console", "~> 4.2"
 
   gem "capistrano", "~> 3.19"
-  gem "capistrano3-puma", "~> 6.0"
+  gem "capistrano3-puma", "~> 8.1"
   gem "capistrano-bundler", "~> 2.2"
   gem "capistrano-nvm"
   gem "capistrano-rails", "~> 1.7"
