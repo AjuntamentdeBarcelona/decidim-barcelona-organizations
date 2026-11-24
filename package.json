@@ -11,14 +11,9 @@
     "formbuilder-languages": "^1.2.0",
     "inline-attacher": "^0.0.7",
     "jsrender": "^1.0.16",
-    "leaflet.featuregroup.subgroup": "^1.0.2",
-    "tom-select": "^2.2.2"
+    "leaflet.featuregroup.subgroup": "^1.0.2"
   },
   "version": "0.1.0",
-  "engines": {
-    "node": "18.17.1",
-    "npm": ">=9.6.7"
-  },
   "browserslist": [
     "extends @decidim/browserslist-config"
   ],
@@ -40,7 +35,6 @@
     "@decidim/eslint-config": "^0.32.3",
     "@decidim/prettier-config": "^0.32.3",
     "@decidim/stylelint-config": "^0.32.3",
-    "@tarekraafat/autocomplete.js": "^10.2.7",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-import": "^2.29.0",
     "postcss-scss": "^4.0.9",
